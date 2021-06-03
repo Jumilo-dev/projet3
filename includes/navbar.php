@@ -9,11 +9,11 @@
 <body>
     <ul>
     <?php if(isset($_SESSION["utilisateur"])):?>
-        <li><a href ="../../projet3/principal.php">Accueil</a></li>
+        <li><a href ="../../GBAF/principal.php">Accueil</a></li>
     
     <?php else: ?>
-        <li><a href ="../../projet3/index.php">Accueil</a></li>
-        <li><a href ="../../projet3/inscription.php">Inscription</a></li>
+        <li><a href ="../../GBAF/index.php">Accueil</a></li>
+        <li><a href ="../../GBAF/inscription.php">Inscription</a></li>
     <?php endif;?>
     
     

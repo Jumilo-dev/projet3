@@ -13,10 +13,10 @@ session_start();
 </head>
 <body>
 <p> 
-<img src="../../projet3/image/LOGO_GBAF_ROUGE.png" alt="Logo GBAF rouge">
+<img src="../../GBAF/image/LOGO_GBAF_ROUGE.png" alt="Logo GBAF rouge">
 <?php if(isset($_SESSION["utilisateur"])):?>
-    <a href= "../../projet3/profil.php"> <?= $_SESSION["utilisateur"]["prenom"]?> <?= $_SESSION["utilisateur"]["nom"]?></a>
-    <a href="../../projet3/deconnexion.php">Se déconnecter</a>
+    <a href= "../../GBAF/profil.php"> <?= $_SESSION["utilisateur"]["prenom"]?> <?= $_SESSION["utilisateur"]["nom"]?></a>
+    <a href="../../GBAF/deconnexion.php">Se déconnecter</a>
     <?php else: ?>
     <p>Bonjour,</p>
     <?php endif;?>

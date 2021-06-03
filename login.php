@@ -21,7 +21,7 @@ if (!empty($_POST)){
             die ($utilisateur["password"]);
         }*/
 
-        à utiliser lorsque le mot de passe est hasher 
+        //*à utiliser lorsque le mot de passe est hasher 
         if(!password_verify($_POST["password"],$utilisateur["password"])){
             die("L'utilisateur ou le mot de passe est incorrect");
         }

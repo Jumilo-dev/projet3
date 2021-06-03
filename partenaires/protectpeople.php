@@ -1,6 +1,6 @@
 <?php
-include '../../projet3/includes/header.php';
-include '../../projet3/includes/navbar.php';
+include '../../GBAF/includes/header.php';
+include '../../GBAF/includes/navbar.php';
 
 
 ?>
@@ -14,4 +14,4 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quidem earum
 <section class ="commentaires">
 <p>Commentaires</p>
 </section></body>
-<?php include '../../projet3/includes/footer.php';?>
+<?php include '../../GBAF/includes/footer.php';?>
