@@ -12,13 +12,32 @@ session_start();
     
 </head>
 <body>
-<p> 
-<img src="../../GBAF/image/LOGO_GBAF_ROUGE.png" alt="Logo GBAF rouge">
-<?php if(isset($_SESSION["utilisateur"])):?>
-    <a href= "../../GBAF/profil.php"> <?= $_SESSION["utilisateur"]["prenom"]?> <?= $_SESSION["utilisateur"]["nom"]?></a>
-    <a href="../../GBAF/deconnexion.php">Se déconnecter</a>
-    <?php else: ?>
-    <p>Bonjour,</p>
-    <?php endif;?>
+    
+        
+        
+            <a  href="../../GBAF/index.php">
+            <img src="../../GBAF/image/LOGO_GBAF_ROUGE.png"  alt="Logo GBAF rouge">
+            </a>  
+        
+            
+            
+        <?php if(isset($_SESSION["utilisateur"])):?>
+          
+        
+            <a href= "../../GBAF/profil.php"> <?= $_SESSION["utilisateur"]["prenom"]?> <?= $_SESSION["utilisateur"]["nom"]?></a>
+            <a href="../../GBAF/deconnexion.php">Se déconnecter</a>
+                
+        
+        <?php else: ?>
+        
+        
+            <p>Bonjour,</p>
+        
+            
+        <?php endif;?>
+        
+    
+    
+
 </body>
 </html>

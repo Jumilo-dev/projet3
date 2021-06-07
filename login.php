@@ -45,29 +45,31 @@ if (!empty($_POST)){
 $title ="Accueil";
 ?>
 
-<body>
-<h1>Se connecter</h1>
+<body class="text-center">
+    <main class="form-signin">
 <!--formulaire de connexion a afficher sur la page d'accueil -->
-<form action="index.php" method="post">
-<div>
-<label for="username">Nom d'utilisateur</label>
-<input type="text" name="username" required>
-</div>
-<div>
-<label for="password">mot de passe</label>
-<input type="password" name="password" required>
-</div>
-<div>
-<a href ="reinit_pass.php">Mot de passe oublié</a>
-</div>
-<div>
-<button type="submit">Se Connecter</button>
-</form>
-</div>
-<div>
-<a href ="inscription.php">Nouvel utilisateur</a>
-</div>
+    <form action="index.php" method="post">
+    
+        <h1 class="h1 mb-3 pt-4 fw-normal">Connexion</h1>
 
+    <div class="form-floating mb-3">
+        <input type="text" name="username" id = "username" class= "form-control " required>
+        <label for="username" >Nom d'utilisateur</label>
+    </div>
 
+    <div class="form-floating mb-3">
+        <input type="password" name="password" id= "password" class="form-control" required>
+        <label for="password" class="form-label">mot de passe</label>
+    </div>
+
+    
+    <button class="mx-auto btn btn-danger" type="submit">Se Connecter</button>
+    
+
+    <a  class="mx-auto text-muted" href ="reinit_pass.php">Mot de passe oublié</a>
+    <a class="mt-5 mb-3 text-muted" href ="inscription.php">Nouvel utilisateur</a>
+    </form>
+    
+    </main>
 </body>
 <?php 
