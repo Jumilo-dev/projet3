@@ -6,7 +6,7 @@ include 'includes/connect_bdd.php';
 
 
 ?>
-
+<div class="container">
 <section class="presentation">
     <h1>Groupement Banque Assurance Français</h1>
     <p>Le GBAF est une fédération représentant les 6 grands groupes français:</p>
@@ -23,9 +23,9 @@ include 'includes/connect_bdd.php';
      sur le territoire national. Le GBAF est le représentant de la profession bancaire et des assureurs
       sur tous les axes de la réglementation financière française. Sa mission est de promouvoir l'activité
        bancaire à l’échelle nationale. C’est aussi un interlocuteur privilégié des pouvoirs publics</p>
-</section>
+</section class = "border border-danger">
 <section class="extranet">
-    <h2>L'extranet du GBAF</h2>
+    <h2>Les partenaires du GBAF</h2>
     <p>Les produits et services bancaires sont nombreux et très variés.
     Afin de renseigner au mieux les clients, les salariés des 340 agences des banques
      et assurances en France (agents, chargés de clientèle, conseillers financiers, etc.)
@@ -40,7 +40,7 @@ include 'includes/connect_bdd.php';
 
 </section>
 
-<section class="partenaire">
+<section class="border">
 
     <ul>
         <li><h3>Protect People</h3>
@@ -80,6 +80,6 @@ include 'includes/connect_bdd.php';
 </section >
 
 
-
+</div>
 </body>
 <?php include 'includes/footer.php';?>
