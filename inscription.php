@@ -51,51 +51,72 @@ header ("Location: index.php");
 
 
 <body>
-<h1>Inscription</h1>
+
 
 <!--formulaire de création de compte -->
-<form  method="POST">
-<div>
-<label for="name">Nom </label>
-<input type="text" name="name" required>
-</div>
-<div>
-<label for="firstname">Prénom </label>
-<input type="text" name="firstname" required>
-</div>
-<div>
-<label for="username">Nom d'utilisateur</label>
-<input type="text" name="username" required>
-</div>
-<div>
-<label for="password">Choisissez un mot de passe</label>
-<input type="password" name="password" required>
-</div>
-<div>
-<label for="question">Question secrète utilisée pour réinitialiser votre mot de passe</label>
-<select name="question">
-<?php
-$requête=$db->query('SELECT * FROM questions');
+
+<div class="container">
+ <div class="row justify-content-center">
+<form  class= " col-6" method="POST" >
+<fieldset>
+    <legend><h1 class="text-center">Inscription</h1></legend>
 
 
-while ($choice = $requête->fetch())
-{
-    ?>
-    <option value="<?php echo $choice ['id_question'];?>"><?php echo $choice ['question'];?></option>
-<?php
-}
-?>
-</select>
-</div>
-<div>
-<label for="reponse">Votre réponse:</label>
-<input type="text" name="reponse" required>
-</div>
-<div>
-<button type="submit">Valider</button>
-</div>
+    <div class="form-group">
+        <label class=" control-label" for="name">Nom </label> 
+        <input type="text" name="name" class= "form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label class=" control-label" for="firstname">Prénom </label> 
+        <input type="text" name="firstnamename" class= "form-control" required>
+    </div>
+        
+
+    <div class="form-group">
+        <label class=" control-label" for="username">Nom d'utilisateur </label> 
+        <input type="text" name="username" class= "form-control" required>
+    </div>
+        
+
+    <div class="form-group">
+        <label class=" control-label" for="password">Mot de passe </label> 
+        <input type="text" name="password" class= "form-control" required>
+    </div>
+        
+    <div class="form-group">
+        <label class=" control-label" for="question">Question secrète </label>
+        <select name="question" class="form-control selectpicker">
+        <option value="">Sélectionner votre question</option>
+
+            <?php
+            $requête=$db->query('SELECT * FROM questions');
 
 
+            while ($choice = $requête->fetch())
+            {
+             ?>
+            <option value="<?php echo $choice ['id_question'];?>"><?php echo $choice ['question'];?></option>
+            <?php
+            }
+            ?>
+        </select>
+    </div>
+        
+
+    <div class="form-group">
+        <label class=" control-label" for="reponse">Votre réponse </label> 
+        <input type="text" name="reponse" class= "form-control" required>
+    </div>
+    
+    <div class="row justify-content-center">
+        <button type="submit" class=" col-2 btn btn-danger m-4" >S'inscrire</button>  
+    </div>
+
+
+</fieldset>
 </form>
+
+</div>
 </body>
 <?php include 'includes/footer.php';?>

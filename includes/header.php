@@ -13,26 +13,34 @@ session_start();
     
 </head>
 <body>
-    
-        
-        
-            <a  href="../../GBAF/index.php">
-            <img src="../../GBAF/image/LOGO_GBAF_ROUGE.png"  alt="Logo GBAF rouge">
-            </a>  
-        
-            
             
         <?php if(isset($_SESSION["utilisateur"])):?>
-          
-        
-            <a href= "../../GBAF/profil.php"> <?= $_SESSION["utilisateur"]["prenom"]?> <?= $_SESSION["utilisateur"]["nom"]?></a>
-            <a href="../../GBAF/deconnexion.php">Se déconnecter</a>
-                
+            <div class="container">
+                <div class="row justify-content-between">
+           
+                <a   class = "col-4" href="../../GBAF/principal.php">
+                <img src="../../GBAF/image/LOGO_GBAF_ROUGE.png"  alt="Logo GBAF rouge">
+                </a>  
+
+                <div class=" h1 col-4 align-self-center">
+                <img src="../../GBAF/image/person-circle.svg" alt="utilisateur">
+                <a href= "../../GBAF/profil.php"> <?= $_SESSION["utilisateur"]["prenom"]?> <?= $_SESSION["utilisateur"]["nom"]?></a>
+                <a href ="../../GBAF/deconnexion.php">
+                <img src="../../GBAF/image/lock-fill.svg"  alt="cadenas deconnexion">
+                </a>  
+
+            </div>
+  
         
         <?php else: ?>
+            <div class="container">
+                <div class="row justify-content-between ">
+           
+                <a   class = "col-4" href="../../GBAF/index.php">
+                <img src="../../GBAF/image/LOGO_GBAF_ROUGE.png"  alt="Logo GBAF rouge">
+                </a>  
         
-        
-            <p>Bonjour,</p>
+                <p class=" h1 col-4 align-self-center">Bonjour,</p>
         
             
         <?php endif;?>
