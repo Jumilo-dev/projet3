@@ -3,21 +3,28 @@ include 'includes/header.php';
 include 'includes/connect_bdd.php';
 ?>
 
-
-
+<?php
+if (isset($_GET["id_user"]))
+{
+  $getid = ($_GET["id_user"]);
+  
+$sql = "SELECT * FROM `users` WHERE `id_user`= ? ";
+$query = $db->prepare($sql);
+$query->execute(array($getid));
+$profil = $query->fetch();
+var_dump($profil);
+}
+?>
 <p>Profil</p>
 
-<p> Nom :<?php echo $_SESSION["utilisateur"]["nom"];?></p>
-<p>Prénom: <?php echo $_SESSION["utilisateur"]["prenom"];?></p>
+<p> Nom :<?php echo $profil["nom"];?></p>
+<p>Prénom: <?php echo $profil["prenom"];?></p>
 
-<p>Changer de mot de passe</p>
 
-<p>Nom d'utilisateur: <?php echo $_SESSION["utilisateur"]["username"];?></p>
-
-<body class="text-center">
-    <main class="form-signin">
+<!--<body class="text-center">
+    <main class="form-signin">-->
 <!--formulaire de connexion a afficher sur la page d'accueil -->
-    <form action="" method="post">
+    <!--<form action="" method="post">
     
         <h1 class="h3 mb-3 pt-4 fw-normal">Changer mon nom d'utilisateur</h1>
 
@@ -33,7 +40,7 @@ include 'includes/connect_bdd.php';
 
     
 
-    <button class="mx-auto btn btn-danger" type="submit">Changer</button>
+    <button class="mx-auto btn btn-danger" type="submit">Changer</button>-->
 
 
 

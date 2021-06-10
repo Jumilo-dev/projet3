@@ -24,7 +24,7 @@ session_start();
 
                 <div class=" h1 col-4 align-self-center">
                 <img src="../../GBAF/image/person-circle.svg" alt="utilisateur">
-                <a href= "../../GBAF/profil.php?id=<?php echo $_SESSION["utilisateur"]["id"];?>"> <?= $_SESSION["utilisateur"]["prenom"]?> <?= $_SESSION["utilisateur"]["nom"]?></a>
+                <a href= "../../GBAF/profil.php?id_user=<?php echo $_SESSION["utilisateur"]["id_user"];?>"> <?= $_SESSION["utilisateur"]["prenom"]?> <?= $_SESSION["utilisateur"]["nom"]?></a>
                 <a href ="../../GBAF/deconnexion.php">
                 <img src="../../GBAF/image/lock-fill.svg"  alt="cadenas deconnexion">
                 </a>  

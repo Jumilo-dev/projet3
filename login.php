@@ -27,7 +27,7 @@ if (!empty($_POST)){
         }
        //*session_start();
        $_SESSION["utilisateur"]=[
-           "id"=>$utilisateur["id_user"],
+           "id_user"=>$utilisateur["id_user"],
            "nom"=>$utilisateur["nom"],
            "prenom"=>$utilisateur["prenom"],
            "username"=>$utilisateur["username"]
