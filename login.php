@@ -1,6 +1,6 @@
 <?php
 
-if (!isset($_SESSION["utilisteur"])){
+if (!isset($_SESSION["utilisateur"])){
 
 if (!empty($_POST)){
     
@@ -29,7 +29,9 @@ if (!empty($_POST)){
        $_SESSION["utilisateur"]=[
            "id"=>$utilisateur["id_user"],
            "nom"=>$utilisateur["nom"],
-           "prenom"=>$utilisateur["prenom"]
+           "prenom"=>$utilisateur["prenom"],
+           "username"=>$utilisateur["username"]
+
 
        ];
       
@@ -63,6 +65,7 @@ $title ="Accueil";
     </div>
 
     
+
     <button class="mx-auto btn btn-danger" type="submit">Se Connecter</button>
     
 
