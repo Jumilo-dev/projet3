@@ -19,7 +19,7 @@ session_start();
                 <div class="row justify-content-between">
            
                 <a   class = "col-4" href="../../GBAF/principal.php">
-                <img src="../../GBAF/image/LOGO_GBAF_ROUGE.png"  alt="Logo GBAF rouge">
+                <img src="../../GBAF/image/LOGO_GBAF_ROUGE.png"  alt="Logo GBAF rouge " class="h-25">
                 </a>  
 
                 <div class=" h1 col-4 align-self-center">
@@ -37,7 +37,7 @@ session_start();
                 <div class="row justify-content-between ">
            
                 <a   class = "col-4" href="../../GBAF/index.php">
-                <img src="../../GBAF/image/LOGO_GBAF_ROUGE.png"  alt="Logo GBAF rouge">
+                <img src="../../GBAF/image/LOGO_GBAF_ROUGE.png"  alt="Logo GBAF rouge"class="h-25">
                 </a>  
         
                 <p class=" h1 col-4 align-self-center">Bonjour,</p>

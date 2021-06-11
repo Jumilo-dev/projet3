@@ -46,17 +46,22 @@ include 'includes/connect_bdd.php';
 
     
         <div class = "row border border-3 m-4">
-            
-            <img src="image/protectpeople.png" class= col-4>
-            <h3 class= col-3>Protect People</h3>  
-            <p class= col-3>Extrait présentation partenaire </p>
-            <button class= col-2><a href="partenaires/protectpeople.php">En savoir plus</a></button>
+            <div class="col-4">
+            <img class="w-100" src="image/protectpeople.png" >
+            </div>
+            <div class="col-6">
+            <h3 >Protect People</h3>  
+            <p >Extrait présentation partenaire </p>
+            </div>
+            <div class="col-2 position-relative">
+            <button class="position-absolute fixed-bottom"><a href="partenaires/protectpeople.php">En savoir plus</a></button>
+            </div>
         </div>
         
         <div class = "row border border-3 m-4">       
-            <img src class= col-4>
-            <h3 class= col-2>Partenaire 2</h3>
-            <p class= col-2>Extrait présentation partenaire </p>
+            <img src class= "col-4">
+            <h3 class= "col-2">Partenaire 2</h3>
+            <p class= "col-2">Extrait présentation partenaire </p>
             <button class= col-4><a href="page du partenaire">En savoir plus</a></button>
         </div>
 
