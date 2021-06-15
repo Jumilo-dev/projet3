@@ -29,8 +29,8 @@ if(!empty($_POST)){
 $sql= "INSERT INTO `users`(`nom`,`prenom`,`username`,`password`,`question`,`reponse`) VALUES (:nom, :prenom, :username, '$password',:question, :reponse)";
 //*Requete preparée
 $query = $db->prepare($sql);
-
 $query->bindValue(":nom", $name, PDO::PARAM_STR);
+
 $query->bindValue(":prenom", $firstname, PDO::PARAM_STR);
 $query->bindValue(":username", $username, PDO::PARAM_STR);
 $query->bindValue(":question", $question, PDO::PARAM_STR);
@@ -69,7 +69,7 @@ header ("Location: index.php");
 
     <div class="form-group">
         <label class=" control-label" for="firstname">Prénom </label> 
-        <input type="text" name="firstnamename" class= "form-control" required>
+        <input type="text" name="firstname" class= "form-control" required>
     </div>
         
 
