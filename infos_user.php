@@ -1,4 +1,5 @@
 <?php
+
 include 'includes/header.php';
 
 include 'includes/connect_bdd.php';
@@ -14,6 +15,7 @@ if(isset($_POST['username'])&& !empty($_POST['username'])){
         $id_quest=$userinfo['question'];
         $inforeponse=$userinfo['reponse'];
         $info_user=$userinfo['username'];
+        $id_user=$userinfo['id_user'];
         
         
         $infoquest=$db->prepare('SELECT question FROM questions WHERE id_question =? ');
@@ -21,6 +23,7 @@ if(isset($_POST['username'])&& !empty($_POST['username'])){
         $question=$infoquest->fetch();
         $question = $question['question'];
 
+        
     }else{
         echo "Nom d'utilisateur inconnu";
         header ("Location: reinit_pass.php");
@@ -29,18 +32,18 @@ if(isset($_POST['username'])&& !empty($_POST['username'])){
 
 }
 
-if(isset($_POST['reponse'])&& !empty($_POST['reponse'])){
+/*if(isset($_POST['reponse'])&& !empty($_POST['reponse'])){
     $reponse =strip_tags($_POST["reponse"]);
-    $inforep = $inforeponse;
+    
 
-    if($reponse !== $inforep){
+    if($reponse !== $_SESSION["info_user"]["reponse"]){
     die ("Réponse invalide");
     header ("Location: info_user.php");
     }else{
     header ("Location: new_pass.php");
     }
 }
-?>
+*/?>
 <body>
     
 
@@ -51,9 +54,12 @@ if(isset($_POST['reponse'])&& !empty($_POST['reponse'])){
     <div><p><?= $question; ?></p>
     </div>
 
-    <form   method="post">
+    <form action="new_pass.php"  method="post">
 
-        
+    <div >
+         
+        <input type="hidden" name="id_user" value="<?=$id_user;?>"  required>
+    </div>      
 <div >
         <label  for="reponse">Votre réponse:</label> 
         <input type="text" name="reponse" value=""  required>
