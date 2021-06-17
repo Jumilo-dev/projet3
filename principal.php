@@ -5,9 +5,7 @@ include 'includes/header.php';
 include 'includes/connect_bdd.php';
 
 $sql= $db->query("SELECT * FROM partenaires");
-while ($data = $sql->fetch())
-    {echo $data['id_part']."".$data['Titre']."".$data['extrait']."</br>";
-    }
+
 
 
 ?>
@@ -48,59 +46,26 @@ while ($data = $sql->fetch())
       <section class = "border border-danger border-3 mt-4 ">
 
 
-    
+    <?php
+
+    while ($data = $sql->fetch()){
+    ?>
         <div class = "row border border-3 m-4">
             <div class="col-4">
-            <img class="w-100" src="image/protectpeople.png" >
+            <img class="w-100" src="<?=$data["image"]?>" >
             </div>
             <div class="col-6">
-            <h3 >Protect People</h3>  
-            <p >Extrait présentation partenaire </p>
+            <h3 ><?=$data["Titre"]?></h3>  
+            <p ><?=$data["extrait"]?> </p>
             </div>
             <div class="col-2 position-relative">
-            <button class="position-absolute fixed-bottom"><a href="partenaires/protectpeople.php">En savoir plus</a></button>
+            <button class="position-absolute fixed-bottom"><a href="<?=$data["lien"]?>?id_part=<?=$data["id_part"]?>">En savoir plus</a></button>
             </div>
         </div>
+    <?php } 
+    ?>    
         
-        <div class = "row border border-3 m-4">
-            <div class="col-4">
-            <img class="w-100" src="image/formation_co.png" >
-            </div>
-            <div class="col-6">
-            <h3 >Formation&co</h3>  
-            <p >Extrait présentation partenaire </p>
-            </div>
-            <div class="col-2 position-relative">
-            <button class="position-absolute fixed-bottom"><a href="partenaires/formation_co.php">En savoir plus</a></button>
-            </div>
-        </div>
-
-        <div class = "row border border-3 m-4">
-            <div class="col-4">
-            <img class="w-100" src="image/Dsa_france.png" >
-            </div>
-            <div class="col-6">
-            <h3 >Dsa France</h3>  
-            <p >Extrait présentation partenaire </p>
-            </div>
-            <div class="col-2 position-relative">
-            <button class="position-absolute fixed-bottom"><a href="partenaires/Dsa_france.php">En savoir plus</a></button>
-            </div>
-        </div>
-
-        <div class = "row border border-3 m-4">
-            <div class="col-4">
-            <img class="w-100" src="image/CDE.png" >
-            </div>
-            <div class="col-6">
-            <h3 >CDE</h3>  
-            <p >Extrait présentation partenaire </p>
-            </div>
-            <div class="col-2 position-relative">
-            <button class="position-absolute fixed-bottom"><a href="partenaires/CDE.php">En savoir plus</a></button>
-            </div>
-        </div>
-    </ul>
+    
 </section >
 
 

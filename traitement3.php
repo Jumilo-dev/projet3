@@ -13,3 +13,4 @@ if (isset($_POST["newpass"],$_POST["id"])
         print('Mise à jour de ' .$count. ' entrée(s)');
         echo "Mot de passe modifier avec succès";
         }
+        

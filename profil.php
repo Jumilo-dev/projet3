@@ -1,6 +1,7 @@
 <?php
-include 'includes/header.php';
 include 'includes/connect_bdd.php';
+include 'includes/header.php';
+
 
 
 ?>
