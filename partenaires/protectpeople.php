@@ -1,17 +1,21 @@
 <?php
-include '../../GBAF/includes/header.php';
-include '../../GBAF/includes/navbar.php';
+include '../includes/connect_bdd.php';
+include "../includes/header.php";
 
 
+$title="Protectpeople";
+
+$requete= $db->prepare("SELECT * FROM partenaires WHERE Titre=?");
+$requete->execute(array($title));
+while ($data=$requete->fetch()){
+
+$id_part=$data['id_part'];
+$titre=$data['Titre'];
+$extrait=$data['extrait'];
+}
 ?>
-<body>
- <section>   
-<h2>PROTECT PEOPLE </h2>
-<p>Contenu textuel partenaire</p>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quidem earum eaque quas eum necessitatibus quis. Exercitationem pariatur ea eligendi voluptatum. Voluptatum sequi quidem adipisci corporis architecto! Voluptatibus, ipsam eum.
+<p><?=$titre?></p>
+</br>
+<p><?=$extrait?></p>
 
-</section>
-<section class ="commentaires">
-<p>Commentaires</p>
-</section></body>
-<?php include '../../GBAF/includes/footer.php';?>
+<p>Contenu</p>
