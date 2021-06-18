@@ -55,7 +55,7 @@ $sql= $db->query("SELECT * FROM partenaires");
             <img class="w-100" src="<?=$data["image"]?>" >
             </div>
             <div class="col-6">
-            <h3 ><?=$data["Titre"]?></h3>  
+            <h3 ><?=$data["titre"]?></h3>  
             <p ><?=$data["extrait"]?> </p>
             </div>
             <div class="col-2 position-relative">
