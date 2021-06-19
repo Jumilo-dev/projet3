@@ -59,6 +59,8 @@ $sql= $db->query("SELECT * FROM partenaires");
             <p ><?=$data["extrait"]?> </p>
             </div>
             <div class="col-2 position-relative">
+            
+
             <button class="position-absolute fixed-bottom"><a href="<?=$data["lien"]?>?id_part=<?=$data["id_part"]?>">En savoir plus</a></button>
             </div>
         </div>
