@@ -72,17 +72,11 @@ $requete->execute(array($part));
 
          
         ?>
-        <p>posté par:</p>
-        <p><?=$identite["nom"]?></p>
-        <p><?=$identite["prenom"]?></p>  
+        <p>posté par: <?=$identite["prenom"]?> <?=$identite["nom"]?> </p>
+         
 
-        <p >Le : <?=$avis["date"]?> </p>
-            </div>
-            <div class="col-2 position-relative">
-            
-
+        <p >Le : <?=$avis["date"]?> </p>  
            
-            </div>
         </div>
     <?php } 
     ?>    

@@ -10,40 +10,52 @@ if(!empty($_POST)){
 	if(isset($_POST["name"],$_POST["firstname"],$_POST["username"],$_POST["password"],$_POST["question"],$_POST["reponse"])
 		&& !empty($_POST["name"]) && !empty ($_POST["firstname"])&& !empty ($_POST["username"])&& !empty ($_POST["password"])&& !empty ($_POST["question"])&& !empty ($_POST["reponse"])
 	){ //*Le formulaire est complet. Recupérer et protéger les données, faire les contrôles
-        
-        $name= strip_tags($_POST["name"]);
-        $firstname= strip_tags($_POST["firstname"]);
         $username= strip_tags($_POST["username"]);
-        //*hasher le mot de passe (revoir l'algo utilisé)
-		$password= password_hash($_POST["password"],PASSWORD_DEFAULT);
-        //*trouver solution pour envoyer l'id_question au lieu de la question
-        $question= strip_tags($_POST["question"]);
-        $reponse= strip_tags($_POST["reponse"]);
+        //*verifier que l'username est unique
+        $verif_user=$db->prepare("SELECT * FROM users WHERE username=?");
+        $verif_user->execute(array($username));
+        $resultat=$verif_user->fetch();
+       
     
+        if(!$resultat){
+            $name= strip_tags($_POST["name"]);
+            $firstname= strip_tags($_POST["firstname"]);
+           
+            //*hasher le mot de passe 
+            $password= password_hash($_POST["password"],PASSWORD_DEFAULT);
+            
+            $question= strip_tags($_POST["question"]);
+            $reponse= strip_tags($_POST["reponse"]);
+        
+            
+                //*Requete
+                $sql= "INSERT INTO `users`(`nom`,`prenom`,`username`,`password`,`question`,`reponse`) VALUES (:nom, :prenom, :username, '$password',:question, :reponse)";
+                //*Requete preparée
+                $query = $db->prepare($sql);
+                $query->bindValue(":nom", $name, PDO::PARAM_STR);
     
+                $query->bindValue(":prenom", $firstname, PDO::PARAM_STR);
+                $query->bindValue(":username", $username, PDO::PARAM_STR);
+                $query->bindValue(":question", $question, PDO::PARAM_STR);
+                $query->bindValue(":reponse", $reponse, PDO::PARAM_STR);
     
-
-   	
+                $query->execute();
     
-//*Requete
-$sql= "INSERT INTO `users`(`nom`,`prenom`,`username`,`password`,`question`,`reponse`) VALUES (:nom, :prenom, :username, '$password',:question, :reponse)";
-//*Requete preparée
-$query = $db->prepare($sql);
-$query->bindValue(":nom", $name, PDO::PARAM_STR);
+                header ("Location: index.php");
+            }else{
+            header ("Location: inscription.php");
+            die("Merci de choisir un autre nom d'utilisateur");
+            
+        
+        }
 
-$query->bindValue(":prenom", $firstname, PDO::PARAM_STR);
-$query->bindValue(":username", $username, PDO::PARAM_STR);
-$query->bindValue(":question", $question, PDO::PARAM_STR);
-$query->bindValue(":reponse", $reponse, PDO::PARAM_STR);
-
-$query->execute();
-
-header ("Location: index.php");
+       
+    
 //*message d'erreur si le formulaire est incomplet (à compléter plus tard pour indiquer quel champ est incomplet)
-}else
-{
-    die("Le formulaire est incomplet");}
+    }else
+    {die("Le formulaire est incomplet");}
 }
+
 
 
 ?>
