@@ -12,6 +12,8 @@ while ($data=$requete->fetch()){
 $id_part=$data['id_part'];
 $titre=$data['titre'];
 $extrait=$data['extrait'];
+$like=$data['like_count'];
+$dislike=$data['dislike_count'];
 $title=$titre;
 }
 ?>
@@ -20,9 +22,12 @@ $title=$titre;
 <p><?=$extrait?></p>
 
 <p>Contenu</p>
-
-<button>Like</button>
-<button>Dislike</button>
+<form action="vote.php?id_part=<?=$id_part?> &value=1" method ="POST">
+<button type="submit">Like <?=$like?></button>
+</form>
+<form action="vote.php?id_part=<?=$id_part?> &value=-1"method ="POST">
+<button type="submit">Dislike <?=$dislike?></button>
+</form>
 <?php
             $user= $_SESSION["utilisateur"]["id"];
             $part=($_GET["id_part"]);
