@@ -4,30 +4,31 @@ include 'includes/connect_bdd.php';
 
 if (!empty($_POST)){
     
-    if (isset($_POST["username"],$_POST["password"])
-    && !empty($_POST["username"]) && !empty($_POST["password"]))
+    if (isset($_POST["username"],$_POST["password"],$_POST["newpass"])
+    && !empty($_POST["username"]) && !empty($_POST["password"])  && !empty($_POST["newpass"]))
     {
-        
-        $sql = "SELECT * FROM `users` WHERE `username`= :username";
-        $query = $db->prepare($sql);
-        $query->bindValue(":username" , $_POST["username"],PDO::PARAM_STR);
-        $query->execute();
-        $utilisateur = $query->fetch();
+    $newpass= password_hash($_POST["newpass"],PASSWORD_DEFAULT);
+    $username= strip_tags($_POST["username"]);
+    //*on vérifie la correspondance mdp/user
+    $info_user = $db->prepare("SELECT * FROM `users` WHERE `username`= ?");
+    $info_user->execute(array($username));
+    $utilisateur = $info_user->fetch();
 
         if(!$utilisateur){
-            die("L'utilisateur ou le mot de passe n'existe pas");
+            header ("Location: profil.php?error=2");
         }
-       
-        if(!password_verify($_POST["password"],$utilisateur["password"])){
-            die("L'utilisateur ou le mot de passe est incorrect");
+
+        elseif(!password_verify($_POST["password"],$utilisateur["password"])){
+            header ("Location: profil.php?error=2");
         }
-        $newpass= password_hash($_POST["newpass"],PASSWORD_DEFAULT);
-        $username= strip_tags($_POST["username"]);
+        elseif(password_verify($_POST["password"],$utilisateur["password"])){
 
         $update_mdp= $db->prepare("UPDATE users SET `password`=? WHERE username=? LIMIT 1");
         $update_mdp->execute(array($newpass,$username));
         $count = $update_mdp->rowCount();
-                print('Mise à jour de ' .$count. ' entrée(s)');
+
+        header ("Location: profil.php?success=2");}
+                
     }else{ 
     die ("Le formulaire est incomplet");
     }
