@@ -18,13 +18,13 @@ include_once "functions.php";
             
         <?php if(isset($_SESSION["utilisateur"])):?>
             <div class="container">
-                <div class="row  align-items-center text-center">
+                <div class="row position">
            
-                <a   class = "col-sm-12 col-md-6 col-lg-4 align-self-center" href="../../GBAF/principal.php">
+                <a   class = "col-sm-12 col-md-6 col-lg-4 align-self-center text-center " href="../../GBAF/principal.php">
                 <img src="../../GBAF/image/LOGO_GBAF_ROUGE2.png"  alt="Logo GBAF rouge " class="">
                 </a>  
 
-                <div class=" h1 col-sm-12 col-md-6 col-lg-4 offset-lg-4 align-self-start">
+                <div class=" h1 col-sm-12 col-md-6 col-lg-4 offset-lg-4 align-self-start text-center">
                 <img src="../../GBAF/image/person-circle.svg" alt="utilisateur">
                 <a href= "../../GBAF/profil.php"> <?= $_SESSION["utilisateur"]["prenom"]?> <?= $_SESSION["utilisateur"]["nom"]?></a>
                 <a href ="../../GBAF/deconnexion.php">

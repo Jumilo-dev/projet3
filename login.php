@@ -44,10 +44,10 @@ if (!empty($_POST)){
 }else{
   header ("Location: principal.php");  
 }
-$title ="Accueil";
+
 ?>
 
-<body class="text-center">
+<section class="text-center">
     <main class="form-signin">
 <!--formulaire de connexion a afficher sur la page d'accueil -->
     <form action="index.php" method="post">
@@ -65,14 +65,19 @@ $title ="Accueil";
     </div>
 
     
-
-    <button class="mx-auto btn btn-danger" type="submit">Se Connecter</button>
-    
-
-    <a  class="mx-auto text-muted" href ="reinit_pass.php">Mot de passe oublié</a>
-    <a class="mt-5 mb-3 text-muted" href ="inscription.php">Nouvel utilisateur</a>
+    <div class="row row-cols-3 justify-content-center">
+        <div class="col-4">
+        <button class="p-2 btn btn-danger" type="submit">Se Connecter</button>
+        </div> 
+        <div class="col-3">
+        <a  class="text-muted" href ="reinit_pass.php">Mot de passe oublié</a>
+        </div>
+        <div class="col-3">
+        <a class="text-muted" href ="inscription.php">Nouvel utilisateur</a>
+        </div>
+    </div>
     </form>
     
     </main>
-</body>
+</section>
 <?php 

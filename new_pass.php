@@ -2,6 +2,7 @@
 include 'includes/connect_bdd.php';
 include "includes/header.php"; 
 $title ="Mot de passe oublié";
+$error=null;
  
 
  if (!empty($_POST)){
@@ -18,10 +19,10 @@ $title ="Mot de passe oublié";
         $info_user=$user->fetch();
         $id=$info_user['id_user'];
         
-        var_dump($id);
+        
 
         if(!$info_user){
-            header ("Location: index.php");
+            header ("Location: reinit_pass.php?error=1.php");
         }
         
          
@@ -43,14 +44,24 @@ $title ="Mot de passe oublié";
 }
 ?>
 
-<body>
-    <p>Création nouveau mot de passe</p>
-    <form action ="traitement3.php" method="POST" >
-    <input type="hidden" name="id"  value="<?=$id?>" required>
-        <label for="newpass">Choisissez votre nouveau mot de passe </label> 
-        <input type="text" name="newpass"  required>
-        <button type="submit">Valider</button>
+
+<div class="container">
+    <div class="row justify-content-center ">
+        <form class="col-sm-8 col-md-6 col-lg-8 " action ="traitement3.php" method="POST" >
+            <fieldset>
+            <legend><h1 class="h4 text-center  ">Choisissez votre nouveau mot de passe</legend>
+            <input type="hidden" name="id"  value="<?=$id?>" required>
+            <input type="password" name="newpass" class= "form-control mt-5"  required>
+            <button type="submit"class="btn btn-danger m-5 p-2">Valider</button>
+            </fieldset>
+        </form>   
+    </div>
+</div>
+
+<?php 
+include 'includes/footer.php';
+?>
  
-    </form>
-</body>
+    
+
  

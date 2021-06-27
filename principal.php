@@ -9,7 +9,9 @@ $title="Présenation";
 
 
 ?>
-<div class="container">
+
+<div class="container p-4">
+<hr>
 <section class="row text-center">
     <h1 class ="col-12">Groupement Banque Assurance Français</h1>
     <p class ="col-12">Le GBAF est une fédération représentant les 6 grands groupes français:</p>

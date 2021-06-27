@@ -12,5 +12,6 @@ if (isset($_POST["newpass"],$_POST["id"])
         $count = $update_mdp->rowCount();
         print('Mise à jour de ' .$count. ' entrée(s)');
         echo "Mot de passe modifier avec succès";
+        header ("Location: index.php?success=1");
         }
         
