@@ -13,6 +13,12 @@ include 'includes/connect_bdd.php';
         Utiliser votre nouveau mot de passe pour vous connecter !
         </div>
     </div>
+<?php elseif (isset($_GET["success"]) && verify_html($_GET["success"])==2):?>
+    <div class="row justify-content-center">
+        <div class="col-sm-6 col-md-6 alert alert-success text-center p-1 ">
+        Votre compte à été créer avec succès !
+        </div>
+    </div>
 <?php endif?>    
         <?php include 'login.php';?>
 </div>

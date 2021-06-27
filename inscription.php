@@ -42,10 +42,10 @@ if(!empty($_POST)){
                 $query->bindValue(":reponse", $reponse, PDO::PARAM_STR);
     
                 $query->execute();
-                $success="Votre comte est créer";
-                header ("Location: index.php");
+                
+                header ("Location: index.php?success=2");
             }else{
-                $erreur="Merci de choisir un autre nom d'utilisateur";
+                
             header ("Location: inscription.php?error=1");
             
             
@@ -79,7 +79,7 @@ if(!empty($_POST)){
 
 <div class="container">
  <div class="row justify-content-center">
-<form  class= " col-6" method="POST" >
+<form  class= "col-sm-12 col-md-6 " method="POST" >
 <fieldset>
     <legend><h1 class="text-center">Inscription</h1></legend>
 
@@ -132,7 +132,7 @@ if(!empty($_POST)){
     </div>
     
     <div class="row justify-content-center">
-        <button type="submit" class=" col-2 btn btn-danger m-4" >S'inscrire</button>  
+        <button type="submit" class=" col-sm-12 col-md-6 btn btn-danger m-4" >S'inscrire</button>  
     </div>
 
 
