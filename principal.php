@@ -5,7 +5,7 @@ include 'includes/header.php';
 include 'includes/connect_bdd.php';
 
 $sql= $db->query("SELECT * FROM partenaires");
-
+$title="Présenation";
 
 
 ?>
@@ -26,6 +26,7 @@ $sql= $db->query("SELECT * FROM partenaires");
      sur le territoire national. Le GBAF est le représentant de la profession bancaire et des assureurs
       sur tous les axes de la réglementation financière française. Sa mission est de promouvoir l'activité
        bancaire à l’échelle nationale. C’est aussi un interlocuteur privilégié des pouvoirs publics</p>
+    <img src="image/partenaires.jpg" alt="Représentation du travail d'équipe">
 </section >
 <hr>
 <section class="row text-center">
@@ -42,32 +43,27 @@ $sql= $db->query("SELECT * FROM partenaires");
       du groupe ainsi que sur les produits et services bancaires et financiers. 
       Chaque salarié pourra ainsi poster un commentaire et donner son avis.</p>
 </section >
-
-      <section class = "border border-danger border-3 mt-4 ">
-
-
+<section class = "border border-danger border-3 mt-4 ">
     <?php
-
     while ($data = $sql->fetch()){
     ?>
-        <div class = "row border border-3 m-4">
-            <div class="col-4">
-            <img class="w-100" src="<?=$data["image"]?>" >
+    <div class = " border border-3 m-4 ">
+        <div class ="row">
+            <div class=" col-sm-12 col-md-4 col-lg-4 text-center align-self-center">
+            <img class="" style="width: 200px" src="<?=$data["image"]?>" >
             </div>
-            <div class="col-6">
+            <div class="col-sm-12 col-md-8 col-lg-6 mt-4">
             <h3 ><?=$data["titre"]?></h3>  
-            <p ><?=$data["extrait"]?> </p>
-            </div>
-            <div class="col-2 position-relative">
-            
-
-            <button class="position-absolute fixed-bottom"><a href="<?=$data["lien"]?>?id_part=<?=$data["id_part"]?>">En savoir plus</a></button>
-            </div>
+            <p><?=$data["extrait"]?> </p>
+            </div>    
         </div>
+            <div class="col-4 offset-8 position-relative mt-5">
+            <button class="position-absolute bottom-0 end-0"><a href="<?=$data["lien"]?>?id_part=<?=$data["id_part"]?>">En savoir plus</a></button>
+            
+        </div>
+    </div>
     <?php } 
-    ?>    
-        
-    
+    ?>       
 </section >
 
 

@@ -11,18 +11,25 @@ if (!empty($_POST)){
         $user= $_SESSION["utilisateur"]["id"];
         $part= ($_GET["id_part"]);
         $avis= strip_tags($_POST["avis"]);
-        //*Requête d'insertion dans la table commentaires
-       $sql= "INSERT INTO `commentaires`(`user`,`part`,`date`,`avis`) VALUES (:user, :part, CURDATE(),:avis)";
-//*Requete preparée
-$query = $db->prepare($sql);
-$query->bindValue(":user", $user);
+        //*Requête d'insertion dans la table commentaires du commentaire
+        $sql= "INSERT INTO `commentaires`(`user`,`part`,`date`,`avis`) VALUES (:user, :part, CURDATE(),:avis)";
+        $query = $db->prepare($sql);
+        $query->bindValue(":user", $user);
+        $query->bindValue(":part", $part);
+        $query->bindValue(":avis", $avis, PDO::PARAM_STR);
+        $query->execute();
 
-$query->bindValue(":part", $part);
-$query->bindValue(":avis", $avis, PDO::PARAM_STR);
+        //*comptage nombre commentaire pour ce partenaire
+        $compte_avis=$db->prepare("SELECT * FROM commentaires WHERE part=?");
+        $compte_avis->execute(array($part));
+        $avis = $compte_avis->rowCount();
 
+        //*insertion de cette valeur dans la table partenaire
+        $count=$db->prepare("UPDATE partenaires SET`comment_count`=? WHERE id_part=? LIMIT 1");
+        $count->execute(array($avis,$part));
 
-$query->execute();
-header ("Location: partenaire.php?id_part=$part");
+        //*Renvoi vers page du partenaire
+        header ("Location: partenaire.php?id_part=$part");
     }
 }
 $title="Avis";
@@ -36,3 +43,4 @@ $title="Avis";
     <button type=submit>Poster mon commentaire</button>
     </form>
 </body>
+<?php include '../includes/footer.php';?>

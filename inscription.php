@@ -3,7 +3,9 @@
 include 'includes/connect_bdd.php';
 include "includes/header.php"; 
 $title ="Inscription";
-
+$erreur=null;
+$success=null;
+$username=null;
 //*Vérifier que le formulaire est envoyé, et que les champs sont completés
 if(!empty($_POST)){
 
@@ -18,7 +20,7 @@ if(!empty($_POST)){
        
     
         if(!$resultat){
-            $name= strip_tags($_POST["name"]);
+            $name= verify_html($_POST["name"]);
             $firstname= strip_tags($_POST["firstname"]);
            
             //*hasher le mot de passe 
@@ -40,11 +42,12 @@ if(!empty($_POST)){
                 $query->bindValue(":reponse", $reponse, PDO::PARAM_STR);
     
                 $query->execute();
-    
+                $success="Votre comte est créer";
                 header ("Location: index.php");
             }else{
-            header ("Location: inscription.php");
-            die("Merci de choisir un autre nom d'utilisateur");
+                $erreur="Merci de choisir un autre nom d'utilisateur";
+            header ("Location: inscription.php?error=1");
+            
             
         
         }
@@ -63,8 +66,15 @@ if(!empty($_POST)){
 
 
 <body>
-
-
+<?php if (isset($_GET["error"]) && verify_html($_GET["error"])==1):?>
+    <div class="alert alert-danger">
+    Merci de choisir un autre nom d'utilisateur
+    </div>
+<?php elseif ($success):?>
+    <div class="alert alert-success"></div>
+    <?= $success ?>
+    </div>
+<?php endif ?>
 <!--formulaire de création de compte -->
 
 <div class="container">
@@ -93,7 +103,7 @@ if(!empty($_POST)){
 
     <div class="form-group">
         <label class=" control-label" for="password">Mot de passe </label> 
-        <input type="text" name="password" class= "form-control" required>
+        <input type="password" name="password" class= "form-control" required>
     </div>
         
     <div class="form-group">
