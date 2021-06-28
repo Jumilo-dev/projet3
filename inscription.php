@@ -70,10 +70,7 @@ if(!empty($_POST)){
     <div class="alert alert-danger">
     Merci de choisir un autre nom d'utilisateur
     </div>
-<?php elseif ($success):?>
-    <div class="alert alert-success"></div>
-    <?= $success ?>
-    </div>
+
 <?php endif ?>
 <!--formulaire de création de compte -->
 

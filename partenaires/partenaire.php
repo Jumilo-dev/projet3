@@ -19,9 +19,13 @@ $count_comment=$data['comment_count'];
 $title=$titre;
 }
 ?>
-<img src="../<?=$logo?>" alt="Logo du partenaire">
-
-<p><?=$titre?></p>
+<div class="container">
+    <div class="row justify-content-center p-3">
+        <div class="col-sm-4 col-md-6">
+<img src="../<?=$logo?>" alt="Logo du partenaire" class="img-fluid">
+        </div>
+    </div>
+<h2><?=$titre?></h2>
 </br>
 <p><?=$contenu?></p>
 
@@ -30,11 +34,11 @@ $title=$titre;
 
 
 <section class = "border border-danger border-3 mt-4">
-    <div class = "row g-0">
-        <div class="col-2">
-            <p><?= $count_comment?> Commentaire(s)</p>
+    <div class = "row m-2">
+        <div class="col-sm-10 col-md-5 ">
+            <p class="h2"><?= $count_comment?> Commentaire(s)</p>
         </div>
-        <div class="col-4 offset-3">
+        <div class="col-sm-12 col-md-3 offset-md-2">
         <?php
             $user= $_SESSION["utilisateur"]["id"];
             $part=($_GET["id_part"]);
@@ -45,17 +49,17 @@ $title=$titre;
             if(!$reponse){
             ?>
             
-            <a class= "btn btn-info" href="commenter.php?id_part=<?=$id_part?>" role="button">Commenter</a>
+            <a class= "btn btn-outline-dark btn-lg" href="commenter.php?id_part=<?=$id_part?>" role="button">Nouveau commentaire</a>
             
             <?php
             }else{
             ?>
-            <a class= "btn btn-info disabled" href="commenter.php?id_part=<?=$id_part?>" role="button" aria-disabled="true">Commenter</a>
+            <a class= "btn btn-outline-dark btn-lg disabled" href="commenter.php?id_part=<?=$id_part?>" role="button" aria-disabled="true">Nouveau commentaire</a>
             <?php
             }?>
         </div>
         
-        <div class="col-1 offset-1 d-flex">
+        <div class="col-sm-1 col-md-2 d-flex badge bg-light text-wrap g-0 ">
             <?php
             $verif= $db->prepare("SELECT * FROM vote WHERE user=? AND part=?");
             $verif->execute(array($user,$part));
@@ -63,27 +67,27 @@ $title=$titre;
             if(!$reponse){
             ?>
             <form action="vote.php?id_part=<?=$id_part?> &value=1" method ="POST">
-            <button class= "btn btn-info" type="submit">Like <?=$like?></button>
+            <button class= "btn  m-0" type="submit"><?=$like?><i class="fas fa-thumbs-up" style="color:green"></i></button>
             </form>
         
         
             <form action="vote.php?id_part=<?=$id_part?> &value=-1"method ="POST">
-            <button class= "btn btn-info" type="submit"aria-disabled="true">Dislike <?=$dislike?></button>
+            <button class= "btn m-0" type="submit"aria-disabled="true"><i class="fas fa-thumbs-down" style="color:red"></i><?=$dislike?></button>
             </form>
             <?php
             }else{
             ?>
             <form action="vote.php?id_part=<?=$id_part?> &value=1" method ="POST">
-            <button class= "btn btn-info disabled"type="submit" aria-disabled="true">Like <?=$like?></button>
+            <button class= "btn disabled  m-0"type="submit" aria-disabled="true"><?=$like?><i class="fas fa-thumbs-up" style= "color:green"></i></button>
             </form>
         
         
             <form action="vote.php?id_part=<?=$id_part?> &value=-1"method ="POST">
-            <button class= "btn btn-info disabled"type="submit">Dislike <?=$dislike?></button>
+            <button class= "btn disabled  m-0"type="submit"><i class="fas fa-thumbs-down" style="color:red"></i><?=$dislike?></button>
             </form>
             <?php }?>
-        </div>
         
+        </div>
         
     </div>
     
@@ -97,10 +101,7 @@ $requete->execute(array($part));
     
 <?php while ($avis = $requete->fetch()){?>
     <div class = "row border border-3 m-4">
-        <div class="col-8">
-        <p ><?=$avis["avis"]?> </p>
-        </div>
-        <div class="col-4">
+        <div class="col-12">
         <?php
         $user=$avis["user"];
         
@@ -108,8 +109,10 @@ $requete->execute(array($part));
         $auteur->execute(array($user));
         $identite=$auteur->fetch();
         ?>
-        <p>posté par: <?=$identite["prenom"]?> <?=$identite["nom"]?> </p>
-        <p >Le : <?=$avis["date"]?> </p>    
+        <p>Commentaire de : <?=$identite["prenom"]?></p>
+        <p >Le : <?=$avis["date"]?> </p>
+        <p ><?=$avis["avis"]?> </p>
+            
         </div>
     </div>    
     <?php } ?>
