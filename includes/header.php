@@ -22,17 +22,21 @@ include_once "functions.php";
             
         <?php if(isset($_SESSION["utilisateur"])):?>
             <div class="container">
-                <div class="row position">
-           
-                <a   class = "col-sm-12 col-md-6 col-lg-4 align-self-center text-center " href="../../GBAF/principal.php">
-                <img src="../../GBAF/image/LOGO_GBAF_ROUGE2.png"  alt="Logo GBAF rouge " class="">
-                </a>  
+                <div class="row">
+                <div class="col-sm-12 col-md-5 col-lg-4 mx-auto">
+                <a href="../../GBAF/principal.php" data-bs-placement="right" title="Nos partenaires">
+                <img src="../../GBAF/image/LOGO_GBAF_ROUGE2.png"  alt="Logo GBAF rouge " class="img-fluid">
+                </a>
+                </div>  
 
-                <div class=" h1 col-sm-12 col-md-6 col-lg-4 offset-lg-4 align-self-start text-center">
-                <img src="../../GBAF/image/person-circle.svg" alt="utilisateur">
-                <a href= "../../GBAF/profil.php"> <?= $_SESSION["utilisateur"]["prenom"]?> <?= $_SESSION["utilisateur"]["nom"]?></a>
-                <a href ="../../GBAF/deconnexion.php">
-                <img src="../../GBAF/image/lock-fill.svg"  alt="cadenas deconnexion">
+                <div class=" h1 col-sm-12 col-md-7 col-lg-5  align-self-start mx-auto g-0">
+                <a  class="text-secondary" href= "../../GBAF/profil.php">
+                <i class="fas fa-user-edit" data-bs-placement="right" title="Mon profil"></a></i>
+                
+                <?= $_SESSION["utilisateur"]["prenom"]?> <?= $_SESSION["utilisateur"]["nom"]?>
+                <a  class="text-secondary" href ="../../GBAF/deconnexion.php" >
+                
+                <i class="fas fa-unlock-alt"data-bs-toggle="tooltip" data-bs-placement="right" title="Se déconnecter"></i>
                 </a>  
 
             </div>
@@ -42,7 +46,7 @@ include_once "functions.php";
             <div class="container">
                 <div class="row p-4">
            
-                <a   class = "col-4" href="../../GBAF/index.php">
+                <a   class = "col-4" href="../../GBAF/index.php" data-bs-placement="right" title="Accueil">
                 <img src="../../GBAF/image/LOGO_GBAF_ROUGE.png"  alt="Logo GBAF rouge"class="h-25">
                 </a>  
         
