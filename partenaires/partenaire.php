@@ -34,6 +34,14 @@ $title=$titre;
 
 
 <section class = "border border-danger border-3 mt-4">
+<?php if (isset($_GET["success"]) && verify_html($_GET["success"])==1):?>
+    <div class="row justify-content-center">
+        <div class="col-sm-6 col-md-6 alert alert-success text-center p-1 ">
+        Commentaire publié! Merci.
+        </div>
+    </div>
+<?php endif?>
+
     <div class = "row m-2">
         <div class="col-sm-10 col-md-5 ">
             <p class="h2"><?= $count_comment?> Commentaire(s)</p>

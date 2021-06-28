@@ -40,7 +40,7 @@ if (!empty($_POST)){
         $count->execute(array($avis,$part));
 
         //*Renvoi vers page du partenaire
-        header ("Location: partenaire.php?id_part=$part");
+        header ("Location: partenaire.php?id_part=$part&success=1");
     }
 }
 $title="Avis";
