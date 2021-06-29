@@ -56,17 +56,15 @@ $title="Avis";
     <section class = "border border-danger border-3 mt-4">
         <div class="row text-center p-3">
             <div class="col-sm-4 col-md-12">
-            <h1><?=$titre?>,</h1>vous remercie pour ce partage d'expérience.
-            <p></p>
-    
-            
-            
-        </div>
+            <h1><?=$titre?>,</h1>
+            <p>vous remercie pour ce partage d'expérience.</p>
+            </div>
+        </div>    
         <form action="commenter.php?id_part=<?=$_GET["id_part"];?>" method="POST">
         <div class="row justify-content-center p-3">
             <div class="col-sm-4 col-md-6">
-            <label for="avis" class="form-label">Votre commentaire</label>
-            <textarea class="form-control" type="text-area" rows="5" name="avis"></textarea>
+            <label for="avis" class="form-label">Votre commentaire :</label>
+            <textarea class="form-control" rows="5" name="avis" id="avis"></textarea>
             </div>
         </div>
         <div class="row justify-content-center p-3">
@@ -76,5 +74,5 @@ $title="Avis";
         </div>    
         </form>
     </section>
-
+</div>
 <?php include '../includes/footer.php';?>

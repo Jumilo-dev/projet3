@@ -48,7 +48,7 @@ if (!empty($_POST)){
 ?>
 
 <section class="text-center">
-    <main class="form-signin">
+    <div class="form-signin">
 <!--formulaire de connexion a afficher sur la page d'accueil -->
     <form action="index.php" method="post">
     
@@ -78,6 +78,6 @@ if (!empty($_POST)){
     </div>
     </form>
     
-    </main>
+</div>
 </section>
 <?php 

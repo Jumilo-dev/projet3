@@ -74,24 +74,24 @@ $title=$titre;
             $reponse=$verif->fetch();
             if(!$reponse){
             ?>
-            <form action="vote.php?id_part=<?=$id_part?> &value=1" method ="POST">
+            <form action="vote.php?id_part=<?=$id_part?>&value=1" method ="POST">
             <button class= "btn  m-0" type="submit"><?=$like?><i class="fas fa-thumbs-up" style="color:green"></i></button>
             </form>
         
         
-            <form action="vote.php?id_part=<?=$id_part?> &value=-1"method ="POST">
-            <button class= "btn m-0" type="submit"aria-disabled="true"><i class="fas fa-thumbs-down" style="color:red"></i><?=$dislike?></button>
+            <form action="vote.php?id_part=<?=$id_part?>&value=-1" method ="POST">
+            <button class= "btn m-0" type="submit" aria-disabled="true"><i class="fas fa-thumbs-down" style="color:red"></i><?=$dislike?></button>
             </form>
             <?php
             }else{
             ?>
-            <form action="vote.php?id_part=<?=$id_part?> &value=1" method ="POST">
-            <button class= "btn disabled  m-0"type="submit" aria-disabled="true"><?=$like?><i class="fas fa-thumbs-up" style= "color:green"></i></button>
+            <form action="vote.php?id_part=<?=$id_part?>&value=1" method ="POST">
+            <button class= "btn disabled  m-0" type="submit" aria-disabled="true"><?=$like?><i class="fas fa-thumbs-up" style= "color:green"></i></button>
             </form>
         
         
-            <form action="vote.php?id_part=<?=$id_part?> &value=-1"method ="POST">
-            <button class= "btn disabled  m-0"type="submit"><i class="fas fa-thumbs-down" style="color:red"></i><?=$dislike?></button>
+            <form action="vote.php?id_part=<?=$id_part?>&value=-1" method ="POST">
+            <button class= "btn disabled  m-0" type="submit"><i class="fas fa-thumbs-down" style="color:red"></i><?=$dislike?></button>
             </form>
             <?php }?>
         

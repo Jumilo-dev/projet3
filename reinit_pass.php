@@ -30,7 +30,7 @@ if(isset($_POST['username'])&& !empty($_POST['username'])){
     }
 }
 ?>
-<body>
+
 
     
 <?php if ($success==0):?>   
@@ -47,7 +47,7 @@ if(isset($_POST['username'])&& !empty($_POST['username'])){
             <div class="row justify-content-center ">
                 <form class="col-sm-6 col-md-4 " method="POST">
                     <fieldset>
-                    <legend><h1 class=" h4 text-center ">Réinitialiser mon mot de passe</legend>
+                    <legend><h1 class=" h4 text-center ">Réinitialiser mon mot de passe</h1></legend>
                     <input type="text" name="username" class= "form-control mt-5" placeholder= "Nom d'utilisateur" required>
                     <button type="submit" class="btn btn-danger m-5">Valider</button>
                     </fieldset>

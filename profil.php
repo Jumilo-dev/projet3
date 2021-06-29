@@ -26,39 +26,40 @@ include 'includes/header.php';
             <legend><h2 class= " text-center">Modifier mon profil</h2></legend>
             <div class="form-group">
             <label  class="control-label" for="name">Nom </label> 
-            <input type="text" name="name" class= "form-control" value="<?php echo $_SESSION ["utilisateur"]["nom"];?>"  required>
+            <input type="text" name="name" class="form-control" value="<?php echo $_SESSION ["utilisateur"]["nom"];?>" id="name"  required>
             </div>
             <div class="form-group">
             <label  class="control-label" for="firstname">Prénom </label> 
-            <input type="text" name="firstname" class= "form-control" value="<?php echo $_SESSION ["utilisateur"]["prenom"]?>"  required>
+            <input type="text" name="firstname" class="form-control" value="<?php echo $_SESSION ["utilisateur"]["prenom"]?>" id="firstname" required>
             </div>
             <div class="form-group">
             <label  class="control-label" for="password">Mot de passe </label> 
-            <input type="password" name="password"class= "form-control" >
+            <input type="password" name="password" class="form-control" id="password">
             </div>
             <div class="text-center p-3">
-            <button class=" btn btn-danger" type="submit">Modifier mon profil</button>
+            <button class="btn btn-danger" type="submit">Modifier mon profil</button>
             </div>    
             </fieldset>
         </form>
+        
         <form action="traitement2.php" method="post" class = "col-sm-12 col-md-5 border border-danger border-3 m-4 ">
             <fieldset>
             <legend><h2 class= " text-center">Modifier mon mot de passe</h2></legend>
             <div class="form-group">
             <label  class="control-label" for="username">Nom d'utilisateur</label> 
-            <input type="text" name="username" class= "form-control"  required>
+            <input type="text" name="username" class="form-control" id="username" required>
             </div>
             <div class="form-group">
-            <label  class="control-label" for="password">Mot de passe </label> 
-            <input type="password" name="password"class= "form-control" required >
+            <label  class="control-label" for="pass">Mot de passe </label> 
+            <input type="password" name="password" class="form-control" id="pass" required >
             </div>
             <div class="form-group">
-            <label  class="control-label" for="password">Nouveau Mot de passe </label> 
-            <input type="password" name="newpass" class= "form-control" required >
+            <label  class="control-label" for="newpass">Nouveau Mot de passe </label> 
+            <input type="password" name="newpass" class="form-control" id="newpass" required >
             </div>
             <div class="text-center p-3">
             <button class="btn btn-danger" type="submit">Modifier mon mot de passe</button>
-            <div >
+            </div >
             </fieldset>
         </form>
 

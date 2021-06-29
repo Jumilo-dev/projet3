@@ -65,7 +65,7 @@ if(!empty($_POST)){
 
 
 
-<body>
+
 <?php if (isset($_GET["error"]) && verify_html($_GET["error"])==1):?>
     <div class="alert alert-danger">
     Merci de choisir un autre nom d'utilisateur
@@ -75,37 +75,37 @@ if(!empty($_POST)){
 <!--formulaire de création de compte -->
 
 <div class="container">
- <div class="row justify-content-center">
-<form  class= "col-sm-12 col-md-6 " method="POST" >
-<fieldset>
-    <legend><h1 class="text-center">Inscription</h1></legend>
+    <div class="row justify-content-center">
+        <form  class= "col-sm-12 col-md-6 " method="POST" >
+        <fieldset>
+        <legend><h1 class="text-center">Inscription</h1></legend>
 
 
-    <div class="form-group">
+        <div class="form-group">
         <label class=" control-label" for="name">Nom </label> 
-        <input type="text" name="name" class= "form-control" required>
-    </div>
+        <input type="text" name="name" class= "form-control" id="name" required>
+        </div>
 
-    <div class="form-group">
+        <div class="form-group">
         <label class=" control-label" for="firstname">Prénom </label> 
-        <input type="text" name="firstname" class= "form-control" required>
-    </div>
+        <input type="text" name="firstname" class= "form-control" id="firstname" required>
+        </div>
         
 
-    <div class="form-group">
+        <div class="form-group">
         <label class=" control-label" for="username">Nom d'utilisateur </label> 
-        <input type="text" name="username" class= "form-control" required>
-    </div>
+        <input type="text" name="username" class= "form-control" id="username" required>
+        </div>
         
 
-    <div class="form-group">
+        <div class="form-group">
         <label class=" control-label" for="password">Mot de passe </label> 
-        <input type="password" name="password" class= "form-control" required>
-    </div>
+        <input type="password" name="password" class= "form-control" id="password" required>
+        </div>
         
-    <div class="form-group">
+        <div class="form-group">
         <label class=" control-label" for="question">Question secrète </label>
-        <select name="question" class="form-control selectpicker">
+        <select name="question" class="form-control selectpicker" id="question">
         <option value="">Sélectionner votre question</option>
 
             <?php
@@ -120,22 +120,25 @@ if(!empty($_POST)){
             }
             ?>
         </select>
-    </div>
+        </div>
         
 
-    <div class="form-group">
+        <div class="form-group">
         <label class=" control-label" for="reponse">Votre réponse </label> 
-        <input type="text" name="reponse" class= "form-control" required>
-    </div>
+        <input type="text" name="reponse" class= "form-control" id="reponse" required>
+        </div>
     
-    <div class="row justify-content-center">
+        <div class="row justify-content-center">
         <button type="submit" class=" col-sm-12 col-md-6 btn btn-danger m-4" >S'inscrire</button>  
+        </div>
+        </fieldset>
+        </form>
     </div>
-
-
-</fieldset>
-</form>
-
 </div>
-</body>
+
+
+
+
+
+
 <?php include 'includes/footer.php';?>

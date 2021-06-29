@@ -52,7 +52,7 @@ $title="Présenation";
     <div class = " border border-3 m-4 ">
         <div class ="row">
             <div class=" col-sm-12 col-md-4 col-lg-4 text-center align-self-center">
-            <img class="" style="width: 200px" src="<?=$data["image"]?>" >
+            <img class="" style="width: 200px" src="<?=$data["image"]?>" alt="Logo partenaire" >
             </div>
             <div class="col-sm-12 col-md-8 col-lg-6 mt-4">
             <h3 ><?=$data["titre"]?></h3>  
@@ -60,8 +60,10 @@ $title="Présenation";
             </div>    
         </div>
             <div class="col-4 offset-8 position-relative mt-5">
-            <button class="position-absolute bottom-0 end-0"><a href="<?=$data["lien"]?>?id_part=<?=$data["id_part"]?>">En savoir plus</a></button>
             
+            <div class="position-absolute bottom-0 end-0">
+            <a href="<?=$data["lien"]?>?id_part=<?=$data["id_part"]?>" class="btn btn-outline-dark" role="button" >En savoir plus</a>
+            </div>
         </div>
     </div>
     <?php } 
@@ -70,5 +72,5 @@ $title="Présenation";
 
 
 </div>
-</body>
+
 <?php include 'includes/footer.php';?>
