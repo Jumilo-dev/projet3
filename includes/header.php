@@ -10,9 +10,14 @@ include_once "functions.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php if (isset($title)){echo $title;} else {echo 'GBAF';} ?></title>
+    <title>
+        <?php if (isset($title)):?>
+            <?= $title ?>
+        <?php else : ?>
+             GBAF
+        <?php endif ?>
+    </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link href="../css/style.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/937bb03074.js" crossorigin="anonymous"></script>
     
 
@@ -26,7 +31,7 @@ include_once "functions.php";
                 <div class="row">
                     <div class="col-sm-12 col-md-5 col-lg-4 mx-auto">
                     <a href="../../GBAF/principal.php" data-bs-placement="right" title="Nos partenaires">
-                    <img src="../../GBAF/image/LOGO_GBAF_ROUGE2.png"  alt="Logo GBAF rouge " class="img-fluid">
+                    <img src="../../GBAF/image/logo_gbaf.png"  alt="Logo GBAF rouge " class="img-fluid">
                     </a>
                     </div>  
 
@@ -49,7 +54,7 @@ include_once "functions.php";
                 <div class="row p-4">
            
                 <a   class = "col-4" href="../../GBAF/index.php" data-bs-placement="right" title="Accueil">
-                <img src="../../GBAF/image/LOGO_GBAF_ROUGE.png"  alt="Logo GBAF rouge" class="h-25">
+                <img src="../../GBAF/image/logo_gbaf.png"  alt="Logo GBAF rouge" class="img-fluid">
                 </a>  
         
                 <p class=" h1 col-4 offset-4">Bonjour,</p>

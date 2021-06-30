@@ -1,6 +1,8 @@
 <?php
-include '../includes/connect_bdd.php';
+$title="Avis";
 include "../includes/header.php";
+include '../includes/connect_bdd.php';
+
 
 //*recupérer les infos du partenaire
 
@@ -43,7 +45,7 @@ if (!empty($_POST)){
         header ("Location: partenaire.php?id_part=$part&success=1");
     }
 }
-$title="Avis";
+
 
 ?>
 <div class="container">

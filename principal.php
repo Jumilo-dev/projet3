@@ -1,11 +1,10 @@
 <?php
-
+$title= "Présentation";
 include 'includes/header.php';
-
 include 'includes/connect_bdd.php';
 
 $sql= $db->query("SELECT * FROM partenaires");
-$title="Présenation";
+
 
 
 ?>
