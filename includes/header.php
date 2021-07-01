@@ -17,7 +17,8 @@ include_once "functions.php";
              GBAF
         <?php endif ?>
     </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/937bb03074.js" crossorigin="anonymous"></script>
     
 
@@ -48,13 +49,13 @@ include_once "functions.php";
 <?php else: ?>
     <div class="container">
         <div class="row justify-content-between ">
-            <div class="offset-xs-3 col-md-4 col-lg-4">    
+            <div class="col-sm-12 col-md-4 col-lg-4">    
                 <a href="../../GBAF/index.php" data-bs-placement="right" title="Accueil">
-                <img src="../../GBAF/image/logo_gbaf.png"  alt="Logo GBAF rouge" class="text-left">
+                <img src="../../GBAF/image/logo_gbaf.png"  alt="Logo GBAF rouge" class="text-center- sm text-left-md">
                 </a>
             </div>
-            <div class="col-md-2 col-lg-2 col-2">
-                <p class=" h1 text-right">Bonjour,</p>
+            <div class="col-sm-12 col-md-2 col-lg-2 col-2">
+                <p class=" h1 text-center-sm text-right-md">Bonjour,</p>
             </div>
         
             
