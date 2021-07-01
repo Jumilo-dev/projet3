@@ -1,0 +1,19 @@
+
+@media (max-width: 360px) {
+
+    .textCenter {
+      text-align: center;
+    } 
+    .justifyBText {
+        justify-content: space-evenly;
+      } 
+  }
+@media (max-width: 1200px) 
+  {
+    
+    .justifyCText {
+        justify-content: center;
+      } 
+  }
+
+

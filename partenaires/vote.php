@@ -7,19 +7,19 @@ if($_SERVER['REQUEST_METHOD'] !='POST'){
     die();
 }
 //*On récupère l'id du partenaire et la valeur du vote
-$value=($_GET["value"]);
+$value=($_GET["value_vote"]);
 $part=($_GET["id_part"]);
 $user=$_SESSION["utilisateur"]["id"];
 //*on vérifie qu'il n'y a pas déjà un vote utilisateur/partenaire
-$verif= $db->prepare("SELECT * FROM vote WHERE user=? AND part=?");
+$verif= $db->prepare("SELECT * FROM vote WHERE id_user=? AND id_part=?");
 $verif->execute(array($user,$part));
 $reponse=$verif->fetch();
     //si pas déjà voté on enregistre le vote
     if(!$reponse){
-    $new_vote=$db->prepare("INSERT INTO `vote`(`part`,`user`,`value`) VALUES (?,?,?)");
+    $new_vote=$db->prepare("INSERT INTO `vote`(`id_part`,`id_user`,`value_vote`) VALUES (?,?,?)");
     $new_vote->execute(array($part,$user,$value));
     //on fait le comptage des votes du partenaire
-    $compte_likes=$db->prepare("SELECT * FROM vote WHERE `value`=1 AND part=?");
+    $compte_likes=$db->prepare("SELECT * FROM vote WHERE `value_vote`=1 AND id_part=?");
     $compte_likes->execute(array($part));
     $likes = $compte_likes->rowCount();
     // et on maj la bdd
@@ -27,7 +27,7 @@ $reponse=$verif->fetch();
     $count->execute(array($likes,$part));
     
     //on refait la même chose pour les dislikes
-    $compte_dislikes=$db->prepare("SELECT * FROM vote WHERE `value`=-1 AND part=?");
+    $compte_dislikes=$db->prepare("SELECT * FROM vote WHERE `value_vote`=-1 AND id_part=?");
     $compte_dislikes->execute(array($part));
     $dislikes = $compte_dislikes->rowCount();
     var_dump($dislikes);

@@ -51,7 +51,7 @@ $count_comment=$data['comment_count'];
             //*On vérifie si l'utilisateur a déjà poster un commentaire pour ce partenaire
             $user= $_SESSION["utilisateur"]["id"];
             $part=($_GET["id_part"]);
-            $verif= $db->prepare("SELECT * FROM commentaires WHERE user=? AND part=?");
+            $verif= $db->prepare("SELECT * FROM commentaires WHERE id_user=? AND id_part=?");
             $verif->execute(array($user,$part));
             $reponse=$verif->fetch();
             if(!$reponse){
@@ -70,26 +70,26 @@ $count_comment=$data['comment_count'];
             <div class="col-sm-1 col-md-2 d-flex badge bg-light text-wrap g-0 ">
             <?php
             //*On vérifie si l'utilisateur a déjà liker ou disliker le partenaire
-            $verif= $db->prepare("SELECT * FROM vote WHERE user=? AND part=?");
+            $verif= $db->prepare("SELECT * FROM vote WHERE id_user=? AND id_part=?");
             $verif->execute(array($user,$part));
             $reponse=$verif->fetch();
             if(!$reponse){
             ?>
                 <!-- si pas liké/disliké bouton actif -->
-                <form action="vote.php?id_part=<?=$id_part?>&value=1" method ="POST">
+                <form action="vote.php?id_part=<?=$id_part?>&value_vote=1" method ="POST">
                     <button class= "btn  m-0" type="submit"><?=$like?><i class="fas fa-thumbs-up" style="color:green"></i></button>
                 </form>
-                <form action="vote.php?id_part=<?=$id_part?>&value=-1" method ="POST">
+                <form action="vote.php?id_part=<?=$id_part?>&value_vote=-1" method ="POST">
                     <button class= "btn m-0" type="submit" aria-disabled="true"><i class="fas fa-thumbs-down" style="color:red"></i><?=$dislike?></button>
                 </form>
             <?php
             }else{
             ?>
                 <!-- si déjà liké/disliké bouton inactif -->
-                <form action="vote.php?id_part=<?=$id_part?>&value=1" method ="POST">
+                <form action="vote.php?id_part=<?=$id_part?>&value_vote=1" method ="POST">
                     <button class= "btn disabled  m-0" type="submit" aria-disabled="true"><?=$like?><i class="fas fa-thumbs-up" style= "color:green"></i></button>
                 </form>
-                <form action="vote.php?id_part=<?=$id_part?>&value=-1" method ="POST">
+                <form action="vote.php?id_part=<?=$id_part?>&value_vote=-1" method ="POST">
                     <button class= "btn disabled  m-0" type="submit"><i class="fas fa-thumbs-down" style="color:red"></i><?=$dislike?></button>
                 </form>
             <?php }?>               
@@ -97,7 +97,7 @@ $count_comment=$data['comment_count'];
         </div>
     <!-- on affiche tous les commentaires liés au partenaire -->   
     <?php
-    $requete= $db->prepare("SELECT * FROM commentaires WHERE part=?");
+    $requete= $db->prepare("SELECT * FROM commentaires WHERE id_part=?");
     $requete->execute(array($part));      
     ?>
         
@@ -106,13 +106,13 @@ $count_comment=$data['comment_count'];
             <div class="col-12">
             <!-- on affiche les informations de l'utilisateur qui a posté le commentaire --> 
             <?php
-                $user=$avis["user"];
+                $user=$avis["id_user"];
                 $auteur= $db->prepare("SELECT * FROM users WHERE id_user=?");
                 $auteur->execute(array($user));
                 $identite=$auteur->fetch();
             ?>
             <p>Commentaire de : <?=$identite["prenom"]?></p>
-            <p >Le : <?=$avis["date"]?> </p>
+            <p >Le : <?=$avis["date_create"]?> </p>
             <p ><?=$avis["avis"]?> </p>   
             </div>
         </div>    

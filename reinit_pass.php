@@ -34,7 +34,7 @@ if(isset($_POST['username'])&& !empty($_POST['username'])){
 }
 ?>
 
-
+<hr>
 <!-- Etat de la page si le formulaire n'est pas rempli-->    
 <?php if ($success==0):?> 
         <!-- barre d'alerte si erreur sur le formulaire 1-->   
@@ -50,11 +50,11 @@ if(isset($_POST['username'])&& !empty($_POST['username'])){
         <!-- formulaire 1 pour verification username--> 
         <div class="container"> 
             <div class="row justify-content-center ">
-                <form class="col-sm-6 col-md-4 " method="POST">
+                <form class="col-sm-6 col-md-4 " method="POST" >
                     <fieldset>
-                    <legend><h1 class=" h4 text-center ">Réinitialiser mon mot de passe</h1></legend>
-                    <input type="text" name="username" class= "form-control mt-5" placeholder= "Nom d'utilisateur" required>
-                    <button type="submit" class="btn btn-danger m-5">Valider</button>
+                        <legend><h1 class=" h4 text-center ">Réinitialiser mon mot de passe</h1></legend>
+                        <input type="text" name="username" class= "form-control my-5" placeholder= "Nom d'utilisateur" required>
+                        <button type="submit" class="btn btn-danger " >Valider</button>
                     </fieldset>
                 </form>
             </div>
@@ -72,8 +72,7 @@ if(isset($_POST['username'])&& !empty($_POST['username'])){
                     <input type="hidden" name="id_user" value="<?=$id_user;?>" class= "form-control mt-5" required> 
                     <input type="text" name="reponse" class= "form-control mt-5" placeholder= "Réponse" required>
                 </fieldset>
-                <button type="submit" class="btn btn-danger m-5 ">Valider</button>
-                
+                <button type="submit" class="btn btn-danger m-5 d-flex ">Valider</button>
             </form>   
         </div>
     </div>    

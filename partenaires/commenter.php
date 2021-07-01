@@ -19,15 +19,15 @@ if (!empty($_POST)){
         $part= ($_GET["id_part"]);
         $avis= verify_html($_POST["avis"]);
         //*Requête d'insertion dans la table commentaires du commentaire
-        $sql= "INSERT INTO `commentaires`(`user`,`part`,`date`,`avis`) VALUES (:user, :part, CURDATE(),:avis)";
+        $sql= "INSERT INTO `commentaires`(`id_user`,`id_part`,`date_create`,`avis`) VALUES (:id_user, :id_part, CURDATE(),:avis)";
         $query = $db->prepare($sql);
-        $query->bindValue(":user", $user);
-        $query->bindValue(":part", $part);
+        $query->bindValue(":id_user", $user);
+        $query->bindValue(":id_part", $part);
         $query->bindValue(":avis", $avis, PDO::PARAM_STR);
         $query->execute();
 
         //*comptage nombre commentaire pour ce partenaire
-        $compte_avis=$db->prepare("SELECT * FROM commentaires WHERE part=?");
+        $compte_avis=$db->prepare("SELECT * FROM commentaires WHERE id_part=?");
         $compte_avis->execute(array($part));
         $avis = $compte_avis->rowCount();
 
