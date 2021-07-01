@@ -1,6 +1,7 @@
 <?php
 session_start();
 include 'includes/connect_bdd.php';
+include_once "includes/functions.php";
 
 
 //*on vérifie que l'utilisateur est connecté et on récupère les infos de l'utilisateur dans la base de données

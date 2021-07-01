@@ -2,10 +2,10 @@
 <div class="container p-2">
       <div class="row justify-content-center">
             <div class="col-3">
-            <a href ="../../GBAF/mentions.php"> Mentions légales </a>
+            <a href ="../mentions.php"> Mentions légales </a>
             </div>
             <div class="col-3">
-            <a href ="../../GBAF/contact.php"> Contact </a>
+            <a href ="../GBAF/contact.php"> Contact </a>
             </div>
       </div>
 </div>

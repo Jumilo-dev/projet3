@@ -2,28 +2,22 @@
 $title="Avis";
 include "../includes/header.php";
 include '../includes/connect_bdd.php';
-
-
 //*recupérer les infos du partenaire
 
 $requete= $db->prepare("SELECT * FROM partenaires WHERE id_part=?");
 $requete->execute(array(intval($_GET["id_part"])));
 while ($data=$requete->fetch()){
-
-
-$titre=$data['titre'];
-$logo=$data['image'];
-
-
+    $titre=$data['titre'];
+    $logo=$data['image'];
 }
+//*on vérifie que le formulaire est soumis et complet
 if (!empty($_POST)){
-    
     if (isset($_POST["avis"])
     && !empty($_POST["avis"]))
     {
         $user= $_SESSION["utilisateur"]["id"];
         $part= ($_GET["id_part"]);
-        $avis= strip_tags($_POST["avis"]);
+        $avis= verify_html($_POST["avis"]);
         //*Requête d'insertion dans la table commentaires du commentaire
         $sql= "INSERT INTO `commentaires`(`user`,`part`,`date`,`avis`) VALUES (:user, :part, CURDATE(),:avis)";
         $query = $db->prepare($sql);
@@ -49,31 +43,30 @@ if (!empty($_POST)){
 
 ?>
 <div class="container">
-
     <div class="row justify-content-center p-3">
         <div class="col-sm-4 col-md-6">
-        <img src="../<?=$logo?>" alt="Logo du partenaire" class="img-fluid">
+            <img src="../<?=$logo?>" alt="Logo du partenaire" class="img-fluid">
         </div>
     </div>
     <section class = "border border-danger border-3 mt-4">
         <div class="row text-center p-3">
             <div class="col-sm-4 col-md-12">
-            <h1><?=$titre?>,</h1>
-            <p>vous remercie pour ce partage d'expérience.</p>
+                <h1><?=$titre?>,</h1>
+                <p>vous remercie de partager votre expérience.</p>
             </div>
         </div>    
         <form action="commenter.php?id_part=<?=$_GET["id_part"];?>" method="POST">
-        <div class="row justify-content-center p-3">
-            <div class="col-sm-4 col-md-6">
-            <label for="avis" class="form-label">Votre commentaire :</label>
-            <textarea class="form-control" rows="5" name="avis" id="avis"></textarea>
+            <div class="row justify-content-center p-3">
+                <div class="col-sm-4 col-md-6">
+                    <label for="avis" class="form-label">Votre commentaire :</label>
+                    <textarea class="form-control" rows="5" name="avis" id="avis"></textarea>
+                </div>
             </div>
-        </div>
-        <div class="row justify-content-center p-3">
-            <div class="col-sm-4 col-md-6">
-            <button class="btn btn-danger m-4" type="submit" >Poster mon commentaire</button>
-            </div>
-        </div>    
+            <div class="row justify-content-center p-3">
+                <div class="col-sm-4 col-md-6 text-center">
+                    <button class="btn btn-danger m-4" type="submit" >Poster mon commentaire</button>
+                </div>
+            </div>    
         </form>
     </section>
 </div>

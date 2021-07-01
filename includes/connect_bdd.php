@@ -31,7 +31,4 @@ catch(PDOException $e)
 {
         die($e->getMessage());
 }
-//* Exemple d'insertion dans base de données
-/*$sql = "INSERT INTO users (`name`,`password`) VALUES ('essai1','bidule')";
-$requete = $db->query($sql);*/
 ?>
