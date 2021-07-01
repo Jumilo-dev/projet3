@@ -32,11 +32,11 @@ if(!isset($_SESSION["utilisateur"])){
        
 
 <div class="container">
-    <div class ="row row-cols-2">
-        <form action="traitement.php" method="post" class = "col-sm-12 col-md-5 border border-danger border-3 m-4 ">
+    <div class ="row row-cols-2 justify-content-center ">
+        <form action="traitement.php" method="post" class = "col-sm-12 col-md-5 border border-danger border-3 m-4  ">
             <fieldset>
                 <legend><h2 class= " text-center">Modifier mon profil</h2></legend>
-                <div class="form-group">
+                <div class="form-group ">
                     <label  class="control-label" for="name">Nom </label> 
                     <input type="text" name="name" class="form-control" value="<?php echo $_SESSION ["utilisateur"]["nom"];?>" id="name"  required>
                 </div>
