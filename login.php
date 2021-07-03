@@ -37,34 +37,19 @@ if (!isset($_SESSION["utilisateur"])){
 }
 
 ?>
+<!--formulaire de connexion a afficher sur la page d'accueil -->
 
-<section class="text-center">
-    <div class="form-signin">
-        <!--formulaire de connexion a afficher sur la page d'accueil -->
-        <form action="index.php" method="post">
-        <h1 class="h1 mb-3 pt-4 fw-normal">Connexion</h1>
-            <div class="form-floating mb-3">
-                <input type="text" name="username" id = "username" class= "form-control " required>
-                <label for="username" >Nom d'utilisateur</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="password" name="password" id= "password" class="form-control" required>
-                <label for="password" class="form-label">mot de passe</label>
-            </div>
-            <div class="row row-cols-3 justify-content-center">
-                <div class="col-4">
-                    <button class="p-2 btn btn-danger" type="submit">Se Connecter</button>
-                </div> 
-            </div>
-        </form>
-        <div class="row row-cols-3 justify-content-center">
-            <div class="col-3">
-                <a  class="text-muted" href ="reinit_pass.php">Mot de passe oublié</a>
-            </div>
-            <div class="col-3">
-                <a class="text-muted" href ="inscription.php">Nouvel utilisateur</a>
-            </div>
-        </div>
-    </div>
-</section>
+<form action="index.php" method="post" class="connex" >
+    <h1>Connexion</h1>
+    <label for="username" >Nom d'utilisateur</label>
+    <input type="text" name="username" id = "username"   required>
+    <label for="password"> Mot de passe</label>
+    <input type="text" name="password" id= "password" required>
+    <button  type="submit">Se Connecter</button>    
+    <hr>
+    <a href ="reinit_pass.php">Mot de passe oublié</a>
+    <a href ="inscription.php">Nouvel utilisateur</a>   
+</form>    
+
+
 <?php 

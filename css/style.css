@@ -1,0 +1,52 @@
+@media (min-width: 401px){
+  /*en tête */
+  .header{
+    display:flex;
+    justify-content: space-between;}
+  
+  .header_text{
+    font-size: 150%;
+    align-self:baseline;
+  }
+  /*footer*/
+  .nav_foot{
+    text-align: center;
+  }
+  .nav_foot li{
+    display: inline-block;
+  }
+  /*formulaire connexion*/    
+  .connex {
+    text-align: center;
+    margin: 20px;
+  }
+  .connex input{
+    width: 100%;
+    height:40px;
+    margin-right:30px;
+    margin-bottom:10px;
+  }
+  .connex label{
+    font-size: 150%;
+
+  }
+  .connex button{
+    font-size: 150%;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    }
+
+  .connex a{
+    margin:10px;
+    font-size: 150%;
+    
+  }
+  
+  
+}
+  .justifyCText {
+      justify-content: center;
+  } 
+
+
+

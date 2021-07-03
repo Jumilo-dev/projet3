@@ -76,7 +76,7 @@ if(!empty($_POST)){
                 </div>
                 <div class="form-group">
                     <label class=" control-label" for="password">Mot de passe </label> 
-                    <input type="password" name="password" class= "form-control" id="password" required>
+                    <input type="text" name="password" class= "form-control" id="password" required>
                 </div>
                 <div class="form-group">
                     <label class=" control-label" for="question">Question secrète </label>

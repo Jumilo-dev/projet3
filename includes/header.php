@@ -17,9 +17,10 @@ include_once "functions.php";
              GBAF
         <?php endif ?>
     </title>
-    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="includes/css/style.css">
+    
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" media= "screen and (max-width: 400px)" href="css/style_smart.css">
     <script src="https://kit.fontawesome.com/937bb03074.js" crossorigin="anonymous"></script>
     
 
@@ -29,39 +30,36 @@ include_once "functions.php";
 <body>
 <!-- En tête si utilisateur connecté-->       
 <?php if(isset($_SESSION["utilisateur"])):?>
-    <div class="container">
-        <div class="row justify-content-between">
-            <div class="col-sm-12 col-md-5 col-lg-4 textCenter textLeft ">
-                <a href="../../GBAF/principal.php" data-bs-placement="right" title="Nos partenaires">
-                <img src="../../GBAF/image/logo_gbaf.png"  alt="Logo GBAF rouge " class="text-left-md">
-                </a>
-            </div>  
-            <div class=" h1 col-sm-12 col-md-6 col-lg-5 d-flex justifyBText justifyCText">
-                <a  class="text-secondary" href= "../../GBAF/profil.php">
-                <i class="fas fa-user-edit" data-bs-placement="right" title="Mon profil"></i></a>
-                <p><?= ucfirst($_SESSION["utilisateur"]["prenom"]) ?> <?= ucfirst($_SESSION["utilisateur"]["nom"])?></p>
-                <a class="text-secondary" href ="../../GBAF/deconnexion.php" >       
-                <i class="fas fa-unlock-alt" data-bs-toggle="tooltip" data-bs-placement="right" title="Se déconnecter"></i>
-                </a>  
-            </div>
-        </div>
+    <div class="header">
+        <span class="header_logo">
+            <a href="../../GBAF/principal.php" data-bs-placement="right" title="Nos partenaires">
+            <img src="../../GBAF/image/logo_gbaf.png"  alt="Logo GBAF rouge " class=>
+            </a>
+        </span>  
+        <span class="header_text">
+            <a href= "../../GBAF/profil.php">
+            <i class="fas fa-user-edit"></i></a>
+            <p><?= ucfirst($_SESSION["utilisateur"]["prenom"]) ?> <?= ucfirst($_SESSION["utilisateur"]["nom"])?></p>
+            <a href ="../../GBAF/deconnexion.php" >       
+            <i class="fas fa-unlock-alt"></i>
+            </a>  
+        </span>
     </div>
+    
 <!-- En tête si utilisateur non-connecté-->
 <?php else: ?>
-    <div class="container">
-        <div class="row justify-content-between ">
-            <div class="col-xs-12 col-sm-4 col-md-4 textCenter ">    
+    <div class="header">
+            <span class="header_logo">
                 <a href="../../GBAF/index.php" data-bs-placement="right" title="Accueil">
-                <img src="../../GBAF/image/logo_gbaf.png"  alt="Logo GBAF rouge" >
+                <img src="../../GBAF/image/logo_gbaf.png"  alt="Logo GBAF rouge" class="header_logo" >
                 </a>
-            </div>
-            <div class="col-xs-12 col-sm-2 col-md-2 textCenter ">
+            </span>
+            <span class="header_text">
                 <p class="h1">Bonjour,</p>
-            </div>
+            </span>
         
-            
-        </div>
-    </div>
+    </div>        
+        
 
 <?php endif;?>
         

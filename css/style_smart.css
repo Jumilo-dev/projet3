@@ -1,0 +1,55 @@
+@media (max-width: 400px) {
+    /*en tête */
+    .header{
+        text-align: center;
+    }
+    /*footer*/
+    .nav_foot{
+        text-align: center;
+    }
+    .nav_foot li{
+        display: inline-block;
+    }
+     /*formulaire connexion*/
+    .connex {
+       text-align: center;
+       margin: 10px;
+       
+    }
+   
+    .connex label{
+        font-size: 150%;
+        margin-bottom:5px;
+
+      }
+    .connex input{
+        width: 100%;
+        height:20px;
+        margin-bottom:20px;
+        
+    }
+    .connex button{
+        font-size: 150%;
+        margin-top: 20px;
+        }
+    .connex a{
+        margin:10px;
+        font-size: 100%;
+    }
+
+
+
+
+
+
+
+
+
+}
+    
+    
+    
+      
+    
+      
+    
