@@ -21,17 +21,13 @@ $count_comment=$data['comment_count'];
 
 }
 ?>
-<div class="container">
-    <div class="row justify-content-center p-3">
-        <div class="col-sm-4 col-md-6">
-            <img src="../<?=$logo?>" alt="Logo du partenaire" class="img-fluid">
-        </div>
-    </div>
+<section class="present_part">
+    <img src="../<?=$logo?>" alt="Logo du partenaire">
     <h2><?=$titre?></h2>
     </br>
     <p><?=$contenu?></p>
-
-    <section class = "border border-danger border-3 mt-4">
+</section>
+    <section class ="list_part">
     <!-- affichage du message lors de la publication d'un commentaire -->
         <?php if (isset($_GET["success"]) && verify_html($_GET["success"])==1):?>
             <div class="row justify-content-center">

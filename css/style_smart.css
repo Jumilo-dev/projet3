@@ -36,6 +36,42 @@
         margin:10px;
         font-size: 100%;
     }
+    /*page principale*/
+    .present h1,h2{
+        text-align: center;
+    }
+    .present img{
+        max-width: 100%;
+        height: auto;
+    }
+    .list_part{
+        border:solid 4px red;
+        padding:10px 5px 30px 5px;
+          
+    }
+    .logo_part img{
+        display: flex;
+        max-width: 80%;
+        height: auto;
+        margin:auto;
+        text-align: center;
+        
+    }
+    .list_part button{
+        float: right;
+        margin-bottom: 10px;
+        font-size:120%;
+    }
+    /*page principale*/
+    .present_part img{
+        max-width: 100%;
+        height: auto;
+    }
+    .list_part{
+        border:solid 4px red;
+        padding:10px 5px 30px 5px;
+          
+    }
 
 
 

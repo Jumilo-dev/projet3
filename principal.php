@@ -10,12 +10,12 @@ if (!isset($_SESSION["utilisateur"])){
 $sql= $db->query("SELECT * FROM partenaires");
 ?>
 
-<div class="container p-4">
+
 <hr>
-    <section class="row text-center">
-        <h1 class ="col-12">Groupement Banque Assurance Français</h1>
-        <p class ="col-12">Le GBAF est une fédération représentant les 6 grands groupes français:</p>
-        <ul class ="col-12">
+    <section class="present">
+        <h1>Groupement Banque Assurance Français</h1>
+        <p>Le GBAF est une fédération représentant les 6 grands groupes français:</p>
+        <ul>
             <li>BNP Paribas</li>
             <li>BPCE</li>
             <li>Crédit Agricole</li>
@@ -23,7 +23,7 @@ $sql= $db->query("SELECT * FROM partenaires");
             <li>Société Générale</li>
             <li>La Banque Postale</li>
         </ul>
-        <p class ="col-12">Même s’il existe une forte concurrence entre ces entités, 
+        <p>Même s’il existe une forte concurrence entre ces entités, 
         elles vont toutes travailler de la même façon pour gérer près de 80 millions de comptes
         sur le territoire national. Le GBAF est le représentant de la profession bancaire et des assureurs
         sur tous les axes de la réglementation financière française. Sa mission est de promouvoir l'activité
@@ -31,9 +31,9 @@ $sql= $db->query("SELECT * FROM partenaires");
         <img src="image/partenaires.jpg" alt="Représentation du travail d'équipe">
     </section >
 <hr>
-    <section class="row text-center">
-        <h2 class ="col-12">Les partenaires du GBAF</h2>
-        <p class ="col-12">Les produits et services bancaires sont nombreux et très variés.
+    <section class="present">
+        <h2>Les partenaires du GBAF</h2>
+        <p>Les produits et services bancaires sont nombreux et très variés.
         Afin de renseigner au mieux les clients, les salariés des 340 agences des banques
         et assurances en France (agents, chargés de clientèle, conseillers financiers, etc.)
         recherchent sur Internet des informations portant sur des produits bancaires et des financeurs,
@@ -46,29 +46,22 @@ $sql= $db->query("SELECT * FROM partenaires");
         du groupe ainsi que sur les produits et services bancaires et financiers. 
         Chaque salarié peux ainsi poster un commentaire et donner son avis.</p>
     </section >
-    <section class = "border border-danger border-3 mt-4 ">
+    <section class="list_part">
         <?php
         while ($data = $sql->fetch()){
         ?>
-        <div class = " border border-3 m-4 ">
-            <div class ="row">
-                <div class=" col-sm-12 col-md-4 col-lg-4 text-center align-self-center">
-                    <img class="" style="width: 200px" src="<?=$data["image"]?>" alt="Logo partenaire" >
-                </div>
-                <div class="col-sm-12 col-md-8 col-lg-6 mt-4">
-                    <h3 ><?=$data["titre"]?></h3>  
-                    <p><?=$data["extrait"]?> </p>
-                </div>    
-            </div>
-            <div class="col-4 offset-8 position-relative mt-5">
-                <div class="position-absolute bottom-0 end-0">
-                    <a href="<?=$data["lien"]?>?id_part=<?=$data["id_part"]?>" class="btn btn-outline-dark" role="button" >En savoir plus</a>
-                </div>
-            </div>
+        <div class="logo_part">
+            <img src="<?=$data["image"]?>" alt="Logo partenaire" >
+            <h3 ><?=$data["titre"]?></h3>  
+            <p><?=$data["extrait"]?> </p>    
+            <a href="<?=$data["lien"]?>?id_part=<?=$data["id_part"]?>" >
+            <button type="button"> En savoir plus</button>
+            </a>
         </div>
+            
         <?php } 
         ?>       
-    </section >
+    </section>
 </div>
 
 <?php include 'includes/footer.php';?>
