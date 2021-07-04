@@ -62,7 +62,7 @@
         margin-bottom: 10px;
         font-size:120%;
     }
-    /*page principale*/
+    /*page partenaire*/
     .present_part img{
         max-width: 100%;
         height: auto;
@@ -71,6 +71,14 @@
         border:solid 4px red;
         padding:10px 5px 30px 5px;
           
+    }
+    /*formulaire reinit*/
+    .reinit form{
+        text-align: center;
+        background-color: red;
+    }
+    .reinit input{
+        max-width: 100%;
     }
 
 

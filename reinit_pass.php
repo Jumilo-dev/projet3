@@ -48,17 +48,14 @@ if(isset($_POST['username'])&& !empty($_POST['username'])){
             </div>
         <?php endif?>
         <!-- formulaire 1 pour verification username--> 
-        <div class="container"> 
-            <div class="row justify-content-center ">
-                <form class="col-sm-6 col-md-4 " method="POST" >
-                    <fieldset>
-                        <legend><h1 class=" h4 text-center ">Réinitialiser mon mot de passe</h1></legend>
-                        <input type="text" name="username" class= "form-control my-5" placeholder= "Nom d'utilisateur" required>
-                        <button type="submit" class="btn btn-danger " >Valider</button>
-                    </fieldset>
-                </form>
-            </div>
-        </div>
+        <article classe="reinit">
+            <form method="POST" >
+                <h1 >Réinitialiser mon mot de passe</h1>
+                <input type="text" name="username" placeholder= "Nom d'utilisateur" required>
+                <button type="submit">Valider</button>
+            </form>    
+        </article>
+   
 
 <!-- affichage du second formulaire si l'username est dans la bdd -->    
 <?php elseif($success==1):?>
