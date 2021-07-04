@@ -17,8 +17,8 @@ include_once "functions.php";
              GBAF
         <?php endif ?>
     </title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" media= "screen and (max-width: 400px)" href="css/style_smart.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_smart.css">
     <script src="https://kit.fontawesome.com/937bb03074.js" crossorigin="anonymous"></script>
     
 
@@ -37,7 +37,7 @@ include_once "functions.php";
         <span class="header_text">
             <a href= "../../GBAF/profil.php">
             <i class="fas fa-user-edit"></i></a>
-            <p><?= ucfirst($_SESSION["utilisateur"]["prenom"]) ?> <?= ucfirst($_SESSION["utilisateur"]["nom"])?></p>
+            <p class="connect"><?= ucfirst($_SESSION["utilisateur"]["prenom"]) ?> <?= ucfirst($_SESSION["utilisateur"]["nom"])?></p>
             <a href ="../../GBAF/deconnexion.php" >       
             <i class="fas fa-unlock-alt"></i>
             </a>  

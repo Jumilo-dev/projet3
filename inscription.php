@@ -50,61 +50,43 @@ if(!empty($_POST)){
 ?>
 <!-- affichage alerte si username déjà utilisé -->
 <?php if (isset($_GET["error"]) && verify_html($_GET["error"])==1):?>
-    <div class="alert alert-danger">
+   
     Merci de choisir un autre nom d'utilisateur
-    </div>
+    
 
 <?php endif ?>
 <!--formulaire de création de compte -->
+<form class="new_user" method="POST" >
+    <h1 >Inscription</h1>        
+    <label  for="name">Nom </label> 
+    <input type="text" name="name" id="name" required>
+    <label  for="firstname">Prénom </label> 
+    <input type="text" name="firstname"  id="firstname" required>
+    <label  for="username">Nom d'utilisateur </label> 
+    <input type="text" name="username"  id="username" required>
+    <label for="password">Mot de passe </label> 
+    <input type="text" name="password"  id="password" required>
+    <label  for="question">Question secrète </label>
+    <select name="question"  id="question" placeholder="Sélectionner votre question">
+        <option value="">Sélectionner votre question</option>
+        <?php
+            //* Insérer les questions de la bdd et renvoyer leur id
+        $question=$db->query('SELECT * FROM questions');
+        while ($choice = $question->fetch())
+        {
+        ?>
+        <option value="<?php echo $choice ['id_question'];?>"><?php echo $choice ['question'];?></option>
+        <?php
+        }
+        ?>
+    </select>
+    <label  for="reponse">Votre réponse </label> 
+    <input type="text" name="reponse"  id="reponse" required>
+    <button type="submit">S'inscrire</button>
+    
+</form>
 
-<div class="container">
-    <div class="row justify-content-center">
-        <form  class= "col-sm-12 col-md-6 " method="POST" >
-            <fieldset>
-                <legend><h1 class="text-center">Inscription</h1></legend>
-                <div class="form-group">
-                    <label class=" control-label" for="name">Nom </label> 
-                    <input type="text" name="name" class= "form-control" id="name" required>
-                </div>
-                <div class="form-group">
-                    <label class=" control-label" for="firstname">Prénom </label> 
-                    <input type="text" name="firstname" class= "form-control" id="firstname" required>
-                </div>
-                <div class="form-group">
-                    <label class=" control-label" for="username">Nom d'utilisateur </label> 
-                    <input type="text" name="username" class= "form-control" id="username" required>
-                </div>
-                <div class="form-group">
-                    <label class=" control-label" for="password">Mot de passe </label> 
-                    <input type="text" name="password" class= "form-control" id="password" required>
-                </div>
-                <div class="form-group">
-                    <label class=" control-label" for="question">Question secrète </label>
-                    <select name="question" class="form-control selectpicker" id="question" placeholder="Sélectionner votre question">
-                        <option value="">Sélectionner votre question</option>
-                        <?php
-                         //* Insérer les questions de la bdd et renvoyer leur id
-                        $question=$db->query('SELECT * FROM questions');
-                        while ($choice = $question->fetch())
-                        {
-                        ?>
-                        <option value="<?php echo $choice ['id_question'];?>"><?php echo $choice ['question'];?></option>
-                        <?php
-                        }
-                        ?>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label class=" control-label" for="reponse">Votre réponse </label> 
-                    <input type="text" name="reponse" class= "form-control" id="reponse" required>
-                </div>
-            </fieldset>
-            <div class="row justify-content-center">
-                <button type="submit" class=" col-sm-12 col-md-6 btn btn-danger m-4" >S'inscrire</button>
-            </div>  
-        </form>
-    </div>
-</div>
+
 
 
 

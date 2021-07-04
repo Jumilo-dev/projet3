@@ -1,7 +1,7 @@
 <?php
 $title="Partenaire";
-include "../includes/header.php";
-include '../includes/connect_bdd.php';
+include "includes/header.php";
+include 'includes/connect_bdd.php';
 //*on bloque l'accès de la page si pas connecté
 if (!isset($_SESSION["utilisateur"])){
     header ("Location: ../index.php");
@@ -21,28 +21,26 @@ $count_comment=$data['comment_count'];
 
 }
 ?>
-<section class="present_part">
-    <img src="../<?=$logo?>" alt="Logo du partenaire">
+<section class="present">
+    <img src="<?=$logo?>" alt="Logo du partenaire">
     <h2><?=$titre?></h2>
     </br>
     <p><?=$contenu?></p>
 </section>
-    <section class ="list_part">
+    
     <!-- affichage du message lors de la publication d'un commentaire -->
         <?php if (isset($_GET["success"]) && verify_html($_GET["success"])==1):?>
-            <div class="row justify-content-center">
-                <div class="col-sm-6 col-md-6 alert alert-success text-center p-1 ">
+            
+                <div class=" alert-success ">
                 Commentaire publié! Merci.
                 </div>
-            </div>
+           
         <?php endif?>
 
-        <div class = "row m-2">
-            <div class="col-sm-10 col-md-5 ">
             <!-- affichage du nombre de commentaires -->
-            <p class="h2"><?= $count_comment?> Commentaire(s)</p>
+            <p class="count_comment"><?= $count_comment?> Commentaire(s)</p>
             </div>
-            <div class="col-sm-12 col-md-3 offset-md-2">
+            
             <?php 
             //*On vérifie si l'utilisateur a déjà poster un commentaire pour ce partenaire
             $user= $_SESSION["utilisateur"]["id"];
@@ -63,7 +61,7 @@ $count_comment=$data['comment_count'];
             }?>
             </div>
         
-            <div class="col-sm-1 col-md-2 d-flex badge bg-light text-wrap g-0 ">
+            <div >
             <?php
             //*On vérifie si l'utilisateur a déjà liker ou disliker le partenaire
             $verif= $db->prepare("SELECT * FROM vote WHERE id_user=? AND id_part=?");
@@ -73,24 +71,24 @@ $count_comment=$data['comment_count'];
             ?>
                 <!-- si pas liké/disliké bouton actif -->
                 <form action="vote.php?id_part=<?=$id_part?>&value_vote=1" method ="POST">
-                    <button class= "btn  m-0" type="submit"><?=$like?><i class="fas fa-thumbs-up" style="color:green"></i></button>
+                    <button type="submit"><?=$like?><i class="fas fa-thumbs-up" style="color:green"></i></button>
                 </form>
                 <form action="vote.php?id_part=<?=$id_part?>&value_vote=-1" method ="POST">
-                    <button class= "btn m-0" type="submit" aria-disabled="true"><i class="fas fa-thumbs-down" style="color:red"></i><?=$dislike?></button>
+                    <button type="submit" aria-disabled="true"><i class="fas fa-thumbs-down" style="color:red"></i><?=$dislike?></button>
                 </form>
             <?php
             }else{
             ?>
                 <!-- si déjà liké/disliké bouton inactif -->
                 <form action="vote.php?id_part=<?=$id_part?>&value_vote=1" method ="POST">
-                    <button class= "btn disabled  m-0" type="submit" aria-disabled="true"><?=$like?><i class="fas fa-thumbs-up" style= "color:green"></i></button>
+                    <button  type="submit" aria-disabled="true"><?=$like?><i class="fas fa-thumbs-up" ></i></button>
                 </form>
                 <form action="vote.php?id_part=<?=$id_part?>&value_vote=-1" method ="POST">
-                    <button class= "btn disabled  m-0" type="submit"><i class="fas fa-thumbs-down" style="color:red"></i><?=$dislike?></button>
+                    <button type="submit"><i class="fas fa-thumbs-down" ></i><?=$dislike?></button>
                 </form>
             <?php }?>               
             </div>
-        </div>
+    <section class ="list_part">    
     <!-- on affiche tous les commentaires liés au partenaire -->   
     <?php
     $requete= $db->prepare("SELECT * FROM commentaires WHERE id_part=?");
@@ -98,8 +96,8 @@ $count_comment=$data['comment_count'];
     ?>
         
     <?php while ($avis = $requete->fetch()){?>
-        <div class = "row border border-3 m-4">
-            <div class="col-12">
+        <div class = "avis">
+            
             <!-- on affiche les informations de l'utilisateur qui a posté le commentaire --> 
             <?php
                 $user=$avis["id_user"];
@@ -110,12 +108,12 @@ $count_comment=$data['comment_count'];
             <p>Commentaire de : <?=$identite["prenom"]?></p>
             <p >Le : <?=$avis["date_create"]?> </p>
             <p ><?=$avis["avis"]?> </p>   
-            </div>
+            
         </div>    
     <?php } ?>    
     </section>
 </div>
 
-<?php include '../includes/footer.php';?>   
+<?php include 'includes/footer.php';?>   
 
 

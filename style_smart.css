@@ -1,7 +1,18 @@
 @media (max-width: 400px) {
     /*en tête */
+    .connect{
+        margin:0;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
     .header{
         text-align: center;
+    }
+    .header_text{
+        font-size: 150%;
+        align-self:baseline;
+        display: flex;
+        justify-content: center;
     }
     /*footer*/
     .nav_foot{
@@ -38,16 +49,26 @@
     }
     /*page principale*/
     .present h1,h2{
-        text-align: center;
+        text-align: left;
     }
     .present img{
         max-width: 100%;
         height: auto;
+        margin-top: 20px;
     }
     .list_part{
         border:solid 4px red;
         padding:10px 5px 30px 5px;
           
+    }
+    .logo_part{
+        border:solid 2px grey;
+        padding-bottom: 35px ;
+        padding-right: 10px;
+        margin-bottom: 10px;
+    }
+    .logo_part p,h3{
+        padding-left: 5px;
     }
     .logo_part img{
         display: flex;
@@ -63,13 +84,15 @@
         font-size:120%;
     }
     /*page partenaire*/
-    .present_part img{
-        max-width: 100%;
-        height: auto;
+    .list_part .count_comment{
+        width: 50%;
+        margin: auto;
     }
-    .list_part{
-        border:solid 4px red;
-        padding:10px 5px 30px 5px;
+    .avis{
+        border:solid 2px grey;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
           
     }
     /*formulaire reinit*/
@@ -103,10 +126,47 @@
         border-radius: 8px;
         background-color:red;
         color: white;
-        
-
     }
-
+    /*formulaire inscription*/
+    .new_user{
+        border: solid 4px red;
+        padding: 10px;
+    }
+    .new_user label{
+        display: block;
+        margin-top: 10px;
+        font-size: 25px;
+    }
+    .new_user button{
+        display: block;
+        width: 100px;  
+        height:30px;
+        display: block;
+        margin:auto;
+        margin-top:20px;
+        border-radius: 8px;
+        border:2px solid red;
+        transition-duration: 0.4s;
+        
+    }
+    .new_user button:hover{
+        width: 100px;  
+        height:30px;
+        display: block;
+        margin:auto;
+        margin-top:20px;
+        border-radius: 8px;
+        background-color:red;
+        color: white;
+    }
+    .new_user input{
+        width: 75%;
+        height:25px;
+    }
+    .new_user select{
+        font-size:12px;
+        height:35px;
+    }
 
 
 

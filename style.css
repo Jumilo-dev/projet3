@@ -1,5 +1,27 @@
+.alert{
+  padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.alert-danger{
+  color: #A94442;
+  background-color: #F2dede;
+  border-color: #ebccd1;
+}
+.alert-success{
+  color: #3c763b;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
 @media (min-width: 401px){
+  
   /*en tête */
+  .connect{
+    margin:0;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
   .header{
     display:flex;
     justify-content: space-between;}
@@ -7,6 +29,7 @@
   .header_text{
     font-size: 150%;
     align-self:baseline;
+    display: flex;
   }
   /*footer*/
   .nav_foot{
@@ -82,34 +105,79 @@
   .reinit{
     border: solid 4px red;
     padding: 10px;
+    margin-right: 25%;
+    margin-left: 25%;
   }
   .reinit form{
     text-align: center;
+   
   }
   .reinit input{
-    width: 200px;
-    height:20px;
+    width:80%;
+    height:40px;
+    font-size: 30px;
     margin-bottom: 30px;
   }
   .reinit button{
     width: 100px;  
-    height:30px;
+    height:40px;
     display: block;
     margin:auto;
     border-radius: 8px;
     border:2px solid red;
     transition-duration: 0.4s;
+    font-size:20px;
   }
   .reinit button:hover{
     width: 100px;  
-    height:30px;
+    height:40px;
     display: block;
     margin:auto;
     border-radius: 8px;
     background-color:red;
     color: white;
+    font-size:20px;
   }
   
+}/*formulaire inscription*/
+.new_user{
+  border: solid 4px red;
+  padding: 10px;
+}
+.new_user label{
+  display: block;
+  margin-top: 10px;
+  font-size: 25px;
+}
+.new_user button{
+  display: block;
+  width: 100px;  
+  height:30px;
+  display: block;
+  margin:auto;
+  margin-top:20px;
+  border-radius: 8px;
+  border:2px solid red;
+  transition-duration: 0.4s;
+  
+}
+.new_user button:hover{
+  width: 100px;  
+  height:30px;
+  display: block;
+  margin:auto;
+  margin-top:20px;
+  border-radius: 8px;
+  background-color:red;
+  color: white;
+}
+.new_user input{
+  width: 75%;
+  height:25px;
+}
+.new_user select{
+  font-size:12px;
+  height:35px;
 }
   
 
