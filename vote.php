@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../includes/connect_bdd.php';
+include 'includes/connect_bdd.php';
 //*On vérifie que la méthode d'envoi des données est bien POST
 if($_SERVER['REQUEST_METHOD'] !='POST'){
     http_reponse_code(403);

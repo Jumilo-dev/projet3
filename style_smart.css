@@ -48,7 +48,7 @@
         font-size: 100%;
     }
     /*page principale*/
-    .present h1,h2{
+    .present h1, .present h2{
         text-align: left;
     }
     .present img{
@@ -58,14 +58,16 @@
     }
     .list_part{
         border:solid 4px red;
-        padding:10px 5px 30px 5px;
+        padding:10px 10px 30px 10px;
           
     }
     .logo_part{
         border:solid 2px grey;
+        border-radius: 8px;
         padding-bottom: 35px ;
         padding-right: 10px;
         margin-bottom: 10px;
+        padding-top: 10px;
     }
     .logo_part p,h3{
         padding-left: 5px;
@@ -83,18 +85,7 @@
         margin-bottom: 10px;
         font-size:120%;
     }
-    /*page partenaire*/
-    .list_part .count_comment{
-        width: 50%;
-        margin: auto;
-    }
-    .avis{
-        border:solid 2px grey;
-        padding: 5px;
-        margin-bottom: 10px;
-    }
-          
-    }
+
     /*formulaire reinit*/
     .reinit{
         border: solid 4px red;
@@ -114,18 +105,15 @@
         display: block;
         margin:auto;
         border-radius: 8px;
-        border:2px solid red;
         transition-duration: 0.4s;
-
-    }
-    .reinit button:hover{
-        width: 100px;  
-        height:30px;
-        display: block;
-        margin:auto;
-        border-radius: 8px;
         background-color:red;
         color: white;
+        border:2px solid red;
+    }
+    .reinit button:hover{
+        background-color:white;
+        color:black;
+        border:2px solid red;
     }
     /*formulaire inscription*/
     .new_user{
@@ -146,18 +134,15 @@
         margin-top:20px;
         border-radius: 8px;
         border:2px solid red;
+        background-color:red;
+        color: white;
         transition-duration: 0.4s;
         
     }
     .new_user button:hover{
-        width: 100px;  
-        height:30px;
-        display: block;
-        margin:auto;
-        margin-top:20px;
-        border-radius: 8px;
-        background-color:red;
-        color: white;
+        border:2px solid red;
+        background-color:white;
+        color: black;
     }
     .new_user input{
         width: 75%;
@@ -167,6 +152,106 @@
         font-size:12px;
         height:35px;
     }
+    /*page partenaire*/
+    .description p{
+    text-align: left;
+    }
+    .description h2{
+    text-align:center;
+    }
+    .description img{
+        max-width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+    .list_comment{
+        border: solid 4px red;
+        padding: 5px;
+    }
+    .vote {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .btnComment {
+        border: solid 2px red;
+    }
+    .btnComment:disabled {
+        border: solid 2px red;
+        background-color: red;
+        color:seashell;
+        border-radius: 8px;
+    }
+    .btnLike, .btnDislike{
+        margin-right: -4px;
+        padding: 2px;
+    }
+    .btnLike{
+        color:green;
+    }
+    .btnDislike{
+        color:red;
+    }
+    .vote form{
+        display: inline-block;
+    }
+    .avis{
+        border:solid 2px grey;
+        border-radius: 8px;
+        padding: 5px;
+        margin:10px 5px 10px 5px;
+        
+    }
+    /*page new comment*/
+    .logo{
+        text-align: center;
+    }
+    .logo img{
+        max-width: 80%;
+        height: auto;
+        margin-top:20px;   
+    }
+    .newComment form{
+        border: solid 4px red;
+        padding: 10px;
+    }
+    .newComment{
+        text-align: center;
+    }
+    .newComment textarea{
+        width: 200px;
+        
+        margin-bottom: 30px;
+    }
+    .newComment button{
+        width: 150px;  
+        height:40px;
+        display: block;
+        margin:auto;
+        border-radius: 8px;
+        transition-duration: 0.4s;
+        background-color:red;
+        color: white;
+        border:2px solid red;
+    }
+    .newComment button:hover{
+        background-color:white;
+        color:black;
+        border:2px solid red;
+    }
+    .modif{
+        text-align: center;
+    }
+    fieldset{
+        border: solid 2px red;
+        padding: 10px;
+    }
+    legend{
+        margin: auto;
+    }
+    
+    
+  }
 
 
 

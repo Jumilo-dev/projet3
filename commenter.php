@@ -1,7 +1,7 @@
 <?php
 $title="Avis";
-include "../includes/header.php";
-include '../includes/connect_bdd.php';
+include "includes/header.php";
+include 'includes/connect_bdd.php';
 //*recupérer les infos du partenaire
 
 $requete= $db->prepare("SELECT * FROM partenaires WHERE id_part=?");
@@ -42,32 +42,16 @@ if (!empty($_POST)){
 
 
 ?>
-<div class="container">
-    <div class="row justify-content-center p-3">
-        <div class="col-sm-4 col-md-6">
-            <img src="../<?=$logo?>" alt="Logo du partenaire" class="img-fluid">
-        </div>
-    </div>
-    <section class = "border border-danger border-3 mt-4">
-        <div class="row text-center p-3">
-            <div class="col-sm-4 col-md-12">
-                <h1><?=$titre?>,</h1>
-                <p>vous remercie de partager votre expérience.</p>
-            </div>
-        </div>    
-        <form action="commenter.php?id_part=<?=$_GET["id_part"];?>" method="POST">
-            <div class="row justify-content-center p-3">
-                <div class="col-sm-4 col-md-6">
-                    <label for="avis" class="form-label">Votre commentaire :</label>
-                    <textarea class="form-control" rows="5" name="avis" id="avis"></textarea>
-                </div>
-            </div>
-            <div class="row justify-content-center p-3">
-                <div class="col-sm-4 col-md-6 text-center">
-                    <button class="btn btn-danger m-4" type="submit" >Poster mon commentaire</button>
-                </div>
-            </div>    
+<div class="logo">
+    <img src="<?=$logo?>" alt="Logo du partenaire" >        
+</div>    
+<section class = "newComment">
+    <h1><?=$titre?>,</h1>
+    <p>vous remercie de partager votre expérience.</p> 
+    <form action="commenter.php?id_part=<?=$_GET["id_part"];?>" method="POST">   
+        <textarea name="avis" rows="5" id="avis"></textarea>
+        <button type="submit" >Poster mon commentaire</button>
         </form>
-    </section>
-</div>
-<?php include '../includes/footer.php';?>
+</section>   
+    
+<?php include 'includes/footer.php';?>

@@ -7,21 +7,16 @@ include 'includes/connect_bdd.php';
 <div class="container">
 <!--on affiche les messages d'alerte si besoin -->
 <?php if (isset($_GET["success"]) && verify_html($_GET["success"])>0):?>
-    <div class="row justify-content-center">
-        <div class="col-sm-6 col-md-6 alert alert-success text-center p-1 ">
             <?php if ($_GET["success"]==1):?>
-            Utiliser votre nouveau mot de passe pour vous connecter !
+            <p class= "alert alert-success">Utiliser votre nouveau mot de passe pour vous connecter !</p>
             <?php elseif ($_GET["success"]==2):?>
-            Votre compte à été créer avec succès !
+            <p class= "alert alert-success">Votre compte à été créer avec succès !</p>
             <?php endif?>
-        </div>    
-    </div>
+        
 <?php elseif (isset($_GET["error"]) && verify_html($_GET["error"])==1):?>
-    <div class="row justify-content-center">
-        <div class="col-sm-6 col-md-6 alert alert-danger text-center p-1 ">
-            Mot de passe incorrect
-        </div>
-    </div>
+    
+    <p class= "alert alert-danger">Mot de passe incorrect</p>
+        
 <?php endif?>
 
 <?php include 'login.php';?>

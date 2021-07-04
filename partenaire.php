@@ -21,22 +21,22 @@ $count_comment=$data['comment_count'];
 
 }
 ?>
-<section class="present">
+<section class="description">
     <img src="<?=$logo?>" alt="Logo du partenaire">
     <h2><?=$titre?></h2>
     </br>
     <p><?=$contenu?></p>
 </section>
-    
+<section class= "list_comment">    
     <!-- affichage du message lors de la publication d'un commentaire -->
         <?php if (isset($_GET["success"]) && verify_html($_GET["success"])==1):?>
             
-                <div class=" alert-success ">
-                Commentaire publié! Merci.
-                </div>
+                
+                <p class="alert alert-success "> Commentaire publié! Merci.
+                
            
         <?php endif?>
-
+    <article class="vote">
             <!-- affichage du nombre de commentaires -->
             <p class="count_comment"><?= $count_comment?> Commentaire(s)</p>
             </div>
@@ -51,12 +51,16 @@ $count_comment=$data['comment_count'];
             if(!$reponse){
             ?>
                 <!-- si pas commenté bouton actif -->
-                <a class= "btn btn-outline-dark btn-lg" href="commenter.php?id_part=<?=$id_part?>" role="button">Nouveau commentaire</a>
+                <a href="commenter.php?id_part=<?=$id_part?>">
+                    <button class= "btnComment ">Nouveau commentaire</button>
+                </a>
             <?php
             }else{
             ?>
                 <!-- si déjà commenté bouton inactif -->
-                <a class= "btn btn-outline-dark btn-lg disabled" href="commenter.php?id_part=<?=$id_part?>" role="button" aria-disabled="true">Nouveau commentaire</a>
+                <a  href="commenter.php?id_part=<?=$id_part?>" >
+                    <button disabled class="btnComment ">Déjà commenter</button>
+                </a>
             <?php
             }?>
             </div>
@@ -71,27 +75,27 @@ $count_comment=$data['comment_count'];
             ?>
                 <!-- si pas liké/disliké bouton actif -->
                 <form action="vote.php?id_part=<?=$id_part?>&value_vote=1" method ="POST">
-                    <button type="submit"><?=$like?><i class="fas fa-thumbs-up" style="color:green"></i></button>
+                    <button class="btnLike" type="submit"><?=" $like"?><i class="fas fa-thumbs-up" ></i></button>
                 </form>
                 <form action="vote.php?id_part=<?=$id_part?>&value_vote=-1" method ="POST">
-                    <button type="submit" aria-disabled="true"><i class="fas fa-thumbs-down" style="color:red"></i><?=$dislike?></button>
+                    <button class="btnDislike"type="submit" ><i class="fas fa-thumbs-down" ></i><?=" $dislike"?></button>
                 </form>
             <?php
             }else{
             ?>
                 <!-- si déjà liké/disliké bouton inactif -->
                 <form action="vote.php?id_part=<?=$id_part?>&value_vote=1" method ="POST">
-                    <button  type="submit" aria-disabled="true"><?=$like?><i class="fas fa-thumbs-up" ></i></button>
+                    <button  class="btnLike" type="submit" disabled><?="$like "?><i class="fas fa-thumbs-up" ></i></button>
                 </form>
                 <form action="vote.php?id_part=<?=$id_part?>&value_vote=-1" method ="POST">
-                    <button type="submit"><i class="fas fa-thumbs-down" ></i><?=$dislike?></button>
+                    <button class="btnDislike" type="submit" disabled><i class="fas fa-thumbs-down" ></i><?=" $dislike"?></button>
                 </form>
             <?php }?>               
             </div>
-    <section class ="list_part">    
+    </article>
     <!-- on affiche tous les commentaires liés au partenaire -->   
     <?php
-    $requete= $db->prepare("SELECT * FROM commentaires WHERE id_part=?");
+    $requete= $db->prepare("SELECT * FROM commentaires WHERE id_part=? ORDER BY date_create DESC");
     $requete->execute(array($part));      
     ?>
         
@@ -105,13 +109,14 @@ $count_comment=$data['comment_count'];
                 $auteur->execute(array($user));
                 $identite=$auteur->fetch();
             ?>
+            
             <p>Commentaire de : <?=$identite["prenom"]?></p>
             <p >Le : <?=$avis["date_create"]?> </p>
             <p ><?=$avis["avis"]?> </p>   
             
         </div>    
     <?php } ?>    
-    </section>
+</section>    
 </div>
 
 <?php include 'includes/footer.php';?>   

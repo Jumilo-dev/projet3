@@ -30,7 +30,7 @@ include "includes/header.php";
 ?>
 
 <!--formulaire nouveau mot de passe-->
-<article class="newpass">
+<article class="reinit">
     <form action ="" method="POST" >
             <h1> Choisissez votre nouveau mot de passe</h1>
             <input type="hidden" name="id"  value="<?=$id?>" required>

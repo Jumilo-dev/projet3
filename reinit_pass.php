@@ -40,7 +40,7 @@ if(isset($_POST['username'])&& !empty($_POST['username'])){
         <!-- barre d'alerte si erreur sur le formulaire 1-->   
         <?php if($error==1):?>
             
-                    <p>Nom d'utilisateur inconnu</p>
+                    <p class="alert alert-danger">Nom d'utilisateur inconnu</p>
                     
         <?php endif?>
         <!-- formulaire 1 pour verification username--> 
@@ -68,9 +68,8 @@ if(isset($_POST['username'])&& !empty($_POST['username'])){
 <!-- Alerte réponse second formulaire incorrect renvoi au formulaire 1-->
 <?php if (isset($_GET["error"]) && verify_html($_GET["error"])==1):?>
     
-        Nom d'utilisateur ou réponse incorrecte !
-        </div>
-    </div>
+        <p class="alert alert-danger"> Nom d'utilisateur ou réponse incorrecte !<p>
+        
 <?php endif?> 
 
 <?php 

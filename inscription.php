@@ -51,7 +51,7 @@ if(!empty($_POST)){
 <!-- affichage alerte si username déjà utilisé -->
 <?php if (isset($_GET["error"]) && verify_html($_GET["error"])==1):?>
    
-    Merci de choisir un autre nom d'utilisateur
+    <p class="alert alert-danger">Merci de choisir un autre nom d'utilisateur</p>
     
 
 <?php endif ?>
@@ -85,12 +85,4 @@ if(!empty($_POST)){
     <button type="submit">S'inscrire</button>
     
 </form>
-
-
-
-
-
-
-
-
 <?php include 'includes/footer.php';?>
