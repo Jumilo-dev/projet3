@@ -78,11 +78,40 @@
     margin-bottom: 20px;
     font-size:120%;
   }
+  /*formulaire reinit*/
+  .reinit{
+    border: solid 4px red;
+    padding: 10px;
+  }
+  .reinit form{
+    text-align: center;
+  }
+  .reinit input{
+    width: 200px;
+    height:20px;
+    margin-bottom: 30px;
+  }
+  .reinit button{
+    width: 100px;  
+    height:30px;
+    display: block;
+    margin:auto;
+    border-radius: 8px;
+    border:2px solid red;
+    transition-duration: 0.4s;
+  }
+  .reinit button:hover{
+    width: 100px;  
+    height:30px;
+    display: block;
+    margin:auto;
+    border-radius: 8px;
+    background-color:red;
+    color: white;
+  }
   
 }
-  .justifyCText {
-      justify-content: center;
-  } 
+  
 
 
 

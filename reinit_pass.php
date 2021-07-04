@@ -39,17 +39,13 @@ if(isset($_POST['username'])&& !empty($_POST['username'])){
 <?php if ($success==0):?> 
         <!-- barre d'alerte si erreur sur le formulaire 1-->   
         <?php if($error==1):?>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-sm-6 col-md-4 alert alert-danger text-center p-1 ">
+            
                     <p>Nom d'utilisateur inconnu</p>
-                    </div>
-                </div>
-            </div>
+                    
         <?php endif?>
         <!-- formulaire 1 pour verification username--> 
-        <article classe="reinit">
-            <form method="POST" >
+        <article class="reinit">
+            <form method="POST">
                 <h1 >Réinitialiser mon mot de passe</h1>
                 <input type="text" name="username" placeholder= "Nom d'utilisateur" required>
                 <button type="submit">Valider</button>
@@ -59,26 +55,19 @@ if(isset($_POST['username'])&& !empty($_POST['username'])){
 
 <!-- affichage du second formulaire si l'username est dans la bdd -->    
 <?php elseif($success==1):?>
-    <div class="container">
-        <div class="row justify-content-center ">
-            <form class="col-sm-6 col-md-4 " action="new_pass.php" method="POST">
-                <fieldset>
-                    <legend>
-                    <h2 class= "h4 text-center ">Merci <?= $info_user; ?>,</br><?= $question; ?>
-                    </legend>
-                    <input type="hidden" name="id_user" value="<?=$id_user;?>" class= "form-control mt-5" required> 
-                    <input type="text" name="reponse" class= "form-control mt-5" placeholder= "Réponse" required>
-                </fieldset>
-                <button type="submit" class="btn btn-danger m-5 d-flex ">Valider</button>
-            </form>   
-        </div>
-    </div>    
+    <article class="reinit">
+        <form  action="new_pass.php" method="POST">
+            <h2 >Merci <?= $info_user; ?>,</br><?= $question; ?>
+            <input type="hidden" name="id_user" value="<?=$id_user;?>"  required> 
+            <input type="text" name="reponse"  placeholder= "Réponse" required>    
+            <button type="submit" >Valider</button>
+        </form>       
+    </article>    
 <?php endif?>
 
 <!-- Alerte réponse second formulaire incorrect renvoi au formulaire 1-->
 <?php if (isset($_GET["error"]) && verify_html($_GET["error"])==1):?>
-    <div class="row justify-content-center">
-        <div class="col-sm-6 col-md-6 alert alert-danger text-center p-1 ">
+    
         Nom d'utilisateur ou réponse incorrecte !
         </div>
     </div>

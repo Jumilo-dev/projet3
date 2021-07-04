@@ -30,18 +30,15 @@ include "includes/header.php";
 ?>
 
 <!--formulaire nouveau mot de passe-->
-<div class="container">
-    <div class="row justify-content-center ">
-        <form class="col-sm-8 col-md-6 col-lg-8 " action ="" method="POST" >
-            <fieldset>
-                <legend><h1 class="h4 text-center  ">Choisissez votre nouveau mot de passe</legend>
-                <input type="hidden" name="id"  value="<?=$id?>" required>
-                <input type="password" name="newpass" class= "form-control mt-5"  required>
-            </fieldset>
-            <button type="submit"class="btn btn-danger m-5 p-2">Valider</button>     
-        </form>   
-    </div>
-</div>
+<article class="newpass">
+    <form action ="" method="POST" >
+            <h1> Choisissez votre nouveau mot de passe</h1>
+            <input type="hidden" name="id"  value="<?=$id?>" required>
+            <input type="password" name="newpass"   required>       
+            <button type="submit">Valider</button>     
+    </form>   
+</article>
+
 
 <?php
 if (!empty($_POST)){

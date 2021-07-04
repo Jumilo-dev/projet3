@@ -17,8 +17,6 @@ include_once "functions.php";
              GBAF
         <?php endif ?>
     </title>
-    
-    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" media= "screen and (max-width: 400px)" href="css/style_smart.css">
     <script src="https://kit.fontawesome.com/937bb03074.js" crossorigin="anonymous"></script>
