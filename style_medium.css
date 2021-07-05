@@ -1,22 +1,4 @@
-.alert{
-  padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    text-align: center;
-}
-.alert-danger{
-  color: #A94442;
-  background-color: #F2dede;
-  border-color: #ebccd1;
-}
-.alert-success{
-  color: #3c763b;
-  background-color: #dff0d8;
-  border-color: #d6e9c6;
-}
 @media (max-width: 800px){
-  
   /*en tête */
   .connect{
     margin:0;
@@ -25,8 +7,8 @@
   }
   .header{
     display:flex;
-    justify-content: space-between;}
-  
+    justify-content: space-between;
+  }
   .header_text{
     font-size: 150%;
     align-self:baseline;
@@ -52,13 +34,12 @@
   }
   .connex label{
     font-size: 150%;
-
   }
   .connex button{
     font-size: 150%;
     margin-top: 30px;
     margin-bottom: 50px;
-    }
+  }
 
   .connex a{
     margin:10px;
@@ -75,8 +56,7 @@
   }
   .list_part{
     border:solid 4px red;
-    padding:10px 5px 30px 5px;
-      
+    padding:10px 5px 30px 5px;   
   }
   .logo_part{
     border:solid 2px grey;
@@ -89,13 +69,10 @@
     max-width: 30%;
     height: auto;
     padding-top: 30px;
-    padding-left: 10px;
-    
-    
+    padding-left: 10px;  
   }
   .logo_part p,h3{
     margin-left: 32%;
-    
   }
   .list_part button{
     float: right;
@@ -111,7 +88,6 @@
   }
   .reinit form{
     text-align: center;
-   
   }
   .reinit input{
     width:80%;
@@ -139,20 +115,19 @@
   }
   
 /*formulaire inscription*/
-    .new_user{
+  .new_user{
     border: solid 4px red;
-    padding: 10px;
-    
-    }
-    .new_user h1{
-      text-align: center;
-    }
-    .new_user label{
+    padding: 10px;  
+  }
+  .new_user h1{
+    text-align: center;
+  }
+  .new_user label{
     display: block;
     margin-top: 10px;
     font-size: 25px;
-    }
-    .new_user button{
+  }
+  .new_user button{
     display: block;
     font-size: 25px;
     width: 150px;  
@@ -165,107 +140,104 @@
     background-color:red;
     color: white;
     transition-duration: 0.4s;
-    
-
-    }
-    .new_user button:hover{
+  }
+  .new_user button:hover{
     border:2px solid red;
     background-color:white;
     color: black;
-    }
-    .new_user input{
+  }
+  .new_user input{
     width: 75%;
     height:25px;
-    }
-    .new_user select{
+  }
+  .new_user select{
     font-size:12px;
     height:35px;
-    }
+  }
     /*page partenaire*/
-    .description p{
+  .description p{
     text-align: left;
-    }
-    .description h2{
+  }
+  .description h2{
     text-align:center;
-    }
-    .description img{
+  }
+  .description img{
     max-width: 100%;
     height: auto;
     margin-top: 20px;
-    }
-    .list_comment{
+  }
+  .list_comment{
     border: solid 4px red;
     padding: 5px;
-    }
-    .vote{
+  }
+  .vote{
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 10px;
     height: 50px; 
-    }
-    .count_comment {
+  }
+  .count_comment {
     font-size: 20px;
-    }
-    .btnComment {
+  }
+  .btnComment {
     height:40px;
     font-size: 25px;
     border: solid 2px red;
     width: auto;
-    }
-    .btnComment:disabled {
+  }
+  .btnComment:disabled {
     border: solid 2px red;
     background-color: red;
     color:seashell;
     border-radius: 8px;
-    }
-    .btnLike, .btnDislike{
+  }
+  .btnLike, .btnDislike{
     width: 40px;
     height:40px;
     font-size: 15px;
-    margin-right: -4px;
     padding: 2px;
-    }
-    .btnLike{
+  }
+  .btnLike{
     color:green;
-    }
-    .btnDislike{
+    margin-right: -300px;
+  }
+  .btnDislike{
     color:red;
-    }
-    .vote form{
+    margin-left:-84px;
+  }
+  .vote form{
     display: inline-block;
-    }
-    .avis{
+  }
+  .avis{
     border:solid 2px grey;
     border-radius: 8px;
     padding: 5px;
     margin:10px 5px 10px 5px;
-
   }
   /*page new comment*/
   .logo{
     text-align: center;
-}
-.logo img{
+  }
+  .logo img{
     max-width: 80%;
     height: auto;
     margin-top:20px;   
-}
-.newComment form{
+  }
+  .newComment form{
     display: inline-block;
     border: solid 4px red;
-    padding: 40px;
-    
-}
-.newComment{
+    padding: 40px;  
+  }
+  .newComment{
     text-align: center;
-}
-.newComment textarea{
+  }
+  .newComment textarea{
     width: 200px;
     min-height: 200px;
     margin-bottom: 30px;
-}
-.newComment button{
+  }
+  .newComment button{
     width: 150px;  
     height:40px;
     display: block;
@@ -275,12 +247,12 @@
     background-color:red;
     color: white;
     border:2px solid red;
-}
-.newComment button:hover{
+  }
+  .newComment button:hover{
     background-color:white;
     color:black;
     border:2px solid red;
-}
+  }
 /*formulaire profil*/
   #titre{
     font-size: 25px;
@@ -291,10 +263,8 @@
   }
   .modif{
     width: 40%;
-    margin:auto;
-  
+    margin:auto; 
   }
-  
   fieldset{
     border: solid 2px red;
     padding: 10px;
@@ -330,7 +300,6 @@
     color:black;
     border:2px solid red;
   }
-
 }
 
 

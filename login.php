@@ -38,13 +38,12 @@ if (!isset($_SESSION["utilisateur"])){
 
 ?>
 <!--formulaire de connexion a afficher sur la page d'accueil -->
-
 <form action="index.php" method="post" class="connex" >
     <h1>Connexion</h1>
     <label for="username" >Nom d'utilisateur</label>
     <input type="text" name="username" id = "username"   required>
     <label for="password"> Mot de passe</label>
-    <input type="text" name="password" id= "password" required>
+    <input type="password" name="password" id= "password" required>
     <button  type="submit">Se Connecter</button>    
     <hr>
     <a href ="reinit_pass.php">Mot de passe oublié</a>

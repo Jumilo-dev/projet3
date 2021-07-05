@@ -40,7 +40,6 @@ if (!empty($_POST)){
     }
 }
 
-
 ?>
 <div class="logo">
     <img src="<?=$logo?>" alt="Logo du partenaire" >        
@@ -51,7 +50,7 @@ if (!empty($_POST)){
     <form action="commenter.php?id_part=<?=$_GET["id_part"];?>" method="POST">   
         <textarea name="avis" rows="5" id="avis"></textarea>
         <button type="submit" >Poster mon commentaire</button>
-        </form>
+    </form>
 </section>   
     
 <?php include 'includes/footer.php';?>

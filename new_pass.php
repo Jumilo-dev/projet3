@@ -28,17 +28,15 @@ include "includes/header.php";
 }
 
 ?>
-
 <!--formulaire nouveau mot de passe-->
 <article class="reinit">
-    <form action ="" method="POST" >
+    <form method="POST" >
             <h1> Choisissez votre nouveau mot de passe</h1>
-            <input type="hidden" name="id"  value="<?=$id?>" required>
+            <input type="hidden" name="id"  value="<?=$id?>">
             <input type="password" name="newpass"   required>       
             <button type="submit">Valider</button>     
     </form>   
 </article>
-
 
 <?php
 if (!empty($_POST)){

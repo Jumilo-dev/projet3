@@ -49,11 +49,8 @@ if(!empty($_POST)){
 }
 ?>
 <!-- affichage alerte si username déjà utilisé -->
-<?php if (isset($_GET["error"]) && verify_html($_GET["error"])==1):?>
-   
+<?php if (isset($_GET["error"]) && verify_html($_GET["error"])==1):?>   
     <p class="alert alert-danger">Merci de choisir un autre nom d'utilisateur</p>
-    
-
 <?php endif ?>
 <!--formulaire de création de compte -->
 <form class="new_user" method="POST" >
@@ -83,6 +80,5 @@ if(!empty($_POST)){
     <label  for="reponse">Votre réponse </label> 
     <input type="text" name="reponse"  id="reponse" required>
     <button type="submit">S'inscrire</button>
-    
 </form>
 <?php include 'includes/footer.php';?>

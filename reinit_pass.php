@@ -37,28 +37,25 @@ if(isset($_POST['username'])&& !empty($_POST['username'])){
 <hr>
 <!-- Etat de la page si le formulaire n'est pas rempli-->    
 <?php if ($success==0):?> 
-        <!-- barre d'alerte si erreur sur le formulaire 1-->   
-        <?php if($error==1):?>
-            
-                    <p class="alert alert-danger">Nom d'utilisateur inconnu</p>
-                    
-        <?php endif?>
-        <!-- formulaire 1 pour verification username--> 
-        <article class="reinit">
-            <form method="POST">
-                <h1 >Réinitialiser mon mot de passe</h1>
-                <input type="text" name="username" placeholder= "Nom d'utilisateur" required>
-                <button type="submit">Valider</button>
-            </form>    
-        </article>
-   
+    <!-- barre d'alerte si erreur sur le formulaire 1-->   
+    <?php if($error==1):?>
+        <p class="alert alert-danger">Nom d'utilisateur inconnu</p>           
+    <?php endif?>
+    <!-- formulaire 1 pour verification username--> 
+    <article class="reinit">
+        <form method="POST">
+            <h1 >Réinitialiser mon mot de passe</h1>
+            <input type="text" name="username" placeholder= "Nom d'utilisateur" required>
+            <button type="submit">Valider</button>
+        </form>    
+    </article>
 
 <!-- affichage du second formulaire si l'username est dans la bdd -->    
 <?php elseif($success==1):?>
     <article class="reinit">
-        <form  action="new_pass.php" method="POST">
-            <h2 >Merci <?= $info_user; ?>,</br><?= $question; ?>
-            <input type="hidden" name="id_user" value="<?=$id_user;?>"  required> 
+        <form action="new_pass.php" method="POST">
+            <h2>Merci <?= $info_user; ?>,<br><?= $question; ?></h2>
+            <input type="hidden" name="id_user" value="<?=$id_user;?>"> 
             <input type="text" name="reponse"  placeholder= "Réponse" required>    
             <button type="submit" >Valider</button>
         </form>       
@@ -67,9 +64,7 @@ if(isset($_POST['username'])&& !empty($_POST['username'])){
 
 <!-- Alerte réponse second formulaire incorrect renvoi au formulaire 1-->
 <?php if (isset($_GET["error"]) && verify_html($_GET["error"])==1):?>
-    
         <p class="alert alert-danger"> Nom d'utilisateur ou réponse incorrecte !<p>
-        
 <?php endif?> 
 
 <?php 

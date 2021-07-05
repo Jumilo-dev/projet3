@@ -18,7 +18,7 @@ include_once "functions.php";
         <?php endif ?>
     </title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" media="screen and (min-width: 401px)"href="style_medium.css">
+    <link rel="stylesheet" media="screen and (min-width: 401px)" href="style_medium.css">
     <link rel="stylesheet" media="screen and (max-width: 400px)" href="style_smart.css">
     <script src="https://kit.fontawesome.com/937bb03074.js" crossorigin="anonymous"></script>
     
@@ -30,33 +30,32 @@ include_once "functions.php";
 <!-- En tête si utilisateur connecté-->       
 <?php if(isset($_SESSION["utilisateur"])):?>
     <div class="header">
-        <span class="header_logo">
+        <div class="header_logo">
             <a href="../../GBAF/principal.php" data-bs-placement="right" title="Nos partenaires">
-            <img src="../../GBAF/image/logo_gbaf.png"  alt="Logo GBAF rouge " class=>
+            <img src="../../GBAF/image/logo_gbaf.png"  alt="Logo GBAF rouge">
             </a>
-        </span>  
-        <span class="header_text">
+        </div>  
+        <div class="header_text">
             <a href= "../../GBAF/profil.php">
-            <i class="fas fa-user-edit"></i></a>
+            <i class="fas fa-user-edit" title="Profil"></i></a>
             <p class="connect"><?= ucfirst($_SESSION["utilisateur"]["prenom"]) ?> <?= ucfirst($_SESSION["utilisateur"]["nom"])?></p>
             <a href ="../../GBAF/deconnexion.php" >       
-            <i class="fas fa-unlock-alt"></i>
+            <i class="fas fa-unlock-alt" title="Déconnexion"></i>
             </a>  
-        </span>
+        </div>
     </div>
     
-<!-- En tête si utilisateur non-connecté-->
+<!-- En tête si utilisateur non connecté-->
 <?php else: ?>
     <div class="header">
-            <span class="header_logo">
+            <div class="header_logo">
                 <a href="../../GBAF/index.php" data-bs-placement="right" title="Accueil">
-                <img src="../../GBAF/image/logo_gbaf.png"  alt="Logo GBAF rouge" class="header_logo" >
+                <img src="../../GBAF/image/logo_gbaf.png"  alt="Logo GBAF rouge">
                 </a>
-            </span>
-            <span class="header_text">
-                <p class="h1">Bonjour,</p>
-            </span>
-        
+            </div>
+            <div class="header_text">
+                <p>Bonjour,</p>
+            </div>
     </div>        
         
 
