@@ -24,8 +24,9 @@ if(!isset($_SESSION["utilisateur"])){
 <?php endif?>
        
 
-<h1> Mon compte utilisateur</h1>
-<section class="modif">
+<h1 id="titre"> Mon compte utilisateur</h1>
+<section class="profil">
+<article class="modif">
     <form action="traitement.php" method="post" class = "col-sm-12 col-md-5 border border-danger border-3 m-4  ">
         <fieldset>
             <legend>Modifier mon profil</legend>
@@ -38,8 +39,8 @@ if(!isset($_SESSION["utilisateur"])){
             <button  type="submit">Modifier mon profil</button>  
         </fieldset>
     </form>
-</section>
-<section class="modif">   
+</article>
+<article class="modif">   
     <form action="traitement2.php" method="post">
         <fieldset>
             <legend>Modifier mon mot de passe</legend>
@@ -52,6 +53,6 @@ if(!isset($_SESSION["utilisateur"])){
             <button class="btn btn-danger" type="submit">Modifier mon mot de passe</button>
         </fieldset>
     </form>
-</section>      
-
+</article>      
+</section>
 <?php include 'includes/footer.php';?>

@@ -18,7 +18,8 @@ include_once "functions.php";
         <?php endif ?>
     </title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style_smart.css">
+    <link rel="stylesheet" media="screen and (min-width: 401px)"href="style_medium.css">
+    <link rel="stylesheet" media="screen and (max-width: 400px)" href="style_smart.css">
     <script src="https://kit.fontawesome.com/937bb03074.js" crossorigin="anonymous"></script>
     
 

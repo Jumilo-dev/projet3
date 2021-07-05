@@ -1,4 +1,4 @@
-@media (max-width: 400px) {
+@media (max-width: 400px){
     /*en tête */
     .connect{
         margin:0;
@@ -239,7 +239,14 @@
         color:black;
         border:2px solid red;
     }
+    /*formulaire profil*/
     .modif{
+        width: 90%;
+        margin:auto;
+        text-align: center;
+    }
+    #titre{
+        font-size: 25px;
         text-align: center;
     }
     fieldset{
@@ -250,6 +257,27 @@
         margin: auto;
     }
     
+    .modif form{
+        display: table-caption;
+        margin-left: 25%;
+        margin-bottom: 10px;
+    }
+    .modif input{
+        margin-top:5px;
+        margin-bottom: 5px;
+    }
+    .modif button{
+        border-radius: 8px;
+        transition-duration: 0.4s;
+        background-color:red;
+        color: white;
+        border:2px solid red;
+    }
+    .modif button:hover{
+        background-color:white;
+        color:black;
+        border:2px solid red;
+    }
     
   }
 
@@ -261,7 +289,7 @@
 
 
 
-}
+
     
     
     
